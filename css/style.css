@@ -8,3 +8,9 @@ and open the template in the editor.
     Author     : wakidur
 */
 
+.invoice11{
+    padding-left: 15px;
+    background-color: #ccc;
+    padding-right: 15px;
+    padding-bottom: 15px;
+}
