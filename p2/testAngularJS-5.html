@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <title>AngularJS Controllers 05/04/2016</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="images/favicon.ico">
+        <link rel="stylesheet" href="css/bootstrap.css">
+    </head>
+    <body>
+       
+        
+        
+        
+        
+        <div class="jumbotron">
+            <div class="container">
+                 <h2>AngularJS Sample Application</h2>
+                 <div ng-app = "mainAppFilters" ng-controller="studentControllerFilters">
+                     <table border="1">
+                         <tr>
+                             <td>Enter first Name</td>
+                             <td><input type="text" ng-model="filters.firstName"></td>
+                         </tr>
+                         <tr>
+                             <td>Enter last Name</td>
+                             <td><input type="text" ng-model="filters.lastName"></td>
+                         </tr>
+                         <tr>
+                             <td>Enter fees</td>
+                             <td><input type="text" ng-model="filters.fees"></td>
+                         </tr>
+                         <tr>
+                             <td>Enter first Name</td>
+                             <td><input type="text" ng-model="subjectName"></td>
+                         </tr>
+                         <tr>
+                             <td></td>
+                             <td></td>
+                         </tr>
+                     </table>
+                     <table border="1">
+                         <tr>
+                             <td>Name in Upper Case : </td>
+                             <td>{{filters.fullName() | uppercase}} </td>
+                             
+                         </tr>
+                         <tr>
+                             <td>Name in Lower Case : </td>
+                             <td>{{filters.fullName() | lowercase}} </td>
+                            
+                         </tr>
+                         <tr>
+                             <td>Fees : </td>
+                             <td>{{filters.fees | currency}} </td>
+                             
+                         </tr>
+                         <tr>
+                             <td>Subject: </td>
+                             <td>
+                                 <ul class="list-group" style="margin-bottom: 0px">
+                                     <li class="list-group-item list-group-item-info" ng-repeat="subject in filters.subjects | filter: subjectName | orderBy : 'marks'">
+<!--                                     <li class="list-group-item list-group-item-info"  ng-repeat="subject in filters.subjects">-->
+                                         {{subject.name + ', marks: ' + subject.marks}}
+                                     </li>
+                                        
+                                 </ul>
+                             </td>
+                             
+                         </tr>
+                         
+                     </table>
+                </div>
+
+
+                
+            </div>
+        </div>
+        
+        
+        <script src="node_modules/angular/angular.js"></script>
+        <script src="model/testAngularJS.js"></script>
+        <script src="controllers/testAngularJS.js"></script>
+    </body>
+</html>
+

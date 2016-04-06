@@ -14,3 +14,8 @@ and open the template in the editor.
     padding-right: 15px;
     padding-bottom: 15px;
 }
+
+div.spicy div {
+  padding: 10px;
+  border: solid 2px #B41872;
+}
