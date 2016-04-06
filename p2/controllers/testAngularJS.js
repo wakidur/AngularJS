@@ -34,7 +34,7 @@ mainAppFilters.controller('studentControllerFilters', function( $scope ){
     $scope.filters = {
         firstName : "Mahesh",
         lastName : "Parashar",
-        fess: 500,
+        fees: 500,
         subjects: [
             {name: 'Physic', marks : 70},
             {name: 'Chemistry', marks: 80},
@@ -48,6 +48,75 @@ mainAppFilters.controller('studentControllerFilters', function( $scope ){
         }
     };
 });
+
+
+//Angularjs Filter
+mainAppFilters.controller('studentControllerFilters', function( $scope ){
+    $scope.filters = {
+        firstName : "Mahesh",
+        lastName : "Parashar",
+        fees: 500,
+        subjects: [
+            {name: 'Physic', marks : 70},
+            {name: 'Chemistry', marks: 80},
+            {name: 'Math' , marks : 69}
+        ],
+        
+        fullName : function() {
+            var studentObject = {};
+            studentObject = $scope.filters;
+            return studentObject.firstName + " " + studentObject.lastName;
+        }
+    };
+});
+
+//Angularjs Table
+
+mainAppTable.controller('studentTable', function ($scope) {
+    $scope.table = {
+        firstName: "Mahesh",
+        lastName: "Parashar",
+        fees: 500,
+        subjects: [
+            {name: 'Physic', marks: 70},
+            {name: 'Chemistry', marks: 80},
+            {name: 'Math', marks: 69},
+            {name: 'Englis', marks: 99},
+            {name: 'Hindi', marks: 67}
+        ],
+        fullName: function () {
+            var studentObject = {};
+            studentObject = $scope.table;
+            return studentObject.firstName + "  " + studentObject.lastName;
+        },
+        Subject: function () {
+            var studentSub = {};
+            studentSub = $scope.table;
+            return studentSub.subjects[0].name;
+//            $.each(studentSub.subjects,function( index, value){
+//               console.log(value.name +  " " + value.marks);
+//                return value.name +  " " + value.marks;
+//            });
+            
+        }
+    };
+});
+
+
+// AngularJs Form
+mainAppForm.controller('studentControllerForm', function ($scope) {
+    $scope.reset = function () {
+        this.firstName = "Wakidur";
+        this.lastName = "Rahman";
+        this.email = "wakidur@gmail.com";
+    }
+
+    $scope.reset();
+});
+         
+
+        
+
 
 
 
