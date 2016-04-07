@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <title>Angular JS View</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="images/favicon.ico">
+        <link rel="stylesheet" href="css/bootstrap.css">
+       
+        <script src="node_modules/angular/angular.js"></script>
+        <script src="node_modules/angular-route/angular-route.min.js"></script>
+      
+        
+        
+    </head>
+    <body>
+        <div class="jumbotron">
+            <div class="container">
+                <h2>Angular JS View</h2>
+                <div ng-app="AngulerJsView">
+                        <p><a href = "#first">Add Student</a></p>
+                        <p><a href = "#second">View Students</a></p>
+                        <div ng-view></div>
+
+                        <script type = "text/ng-template" id = "addStudent.htm">
+                           <h2> Add Student </h2>
+                           {{message}}
+                        </script>
+
+                        <script type = "text/ng-template" id = "viewStudents.htm">
+                           <h2> View Students </h2>
+                           {{message}}
+                        </script>
+                </div>
+                
+                
+
+
+
+
+                
+            </div>
+        </div>
+        
+        <script>
+            var AngulerJsView = angular.module( "AngulerJsView" ,  ['ngRoute']);
+                AngulerJsView.config(['$routeProvider', function($routeProvider) {
+            $routeProvider.
+            
+            when('/first', {
+               templateUrl: 'addStudent.htm',
+               controller: 'AddStudentController'
+            }).
+            
+            when('/second', {
+               templateUrl: 'viewStudents.htm',
+               controller: 'ViewStudentsController'
+            }).
+            
+            otherwise({
+               redirectTo: '/first'
+            });
+         }]);
+         
+         AngulerJsView.controller('AddStudentController', function($scope) {
+            $scope.message = "This page will be used to display add student form";
+         });
+         
+         AngulerJsView.controller('ViewStudentsController', function($scope) {
+            $scope.message = "This page will be used to display all the students";
+         });
+        </script>
+<!--         <script src="model/testAngularJS.js"></script>
+        <script src="controllers/testAngularJS.js"></script>-->
+  
+    </body>
+</html>
