@@ -170,8 +170,6 @@ shoppingCartModule.controller("ShoppingCartController",
            
             
             $scope.addItem = function (index) {
-                console.log($scope.items);
-                console.log($scope.items.length);
                 var  itemCount = $scope.items.length;
                 $scope.items.push({
                      product_name: "Product " + ( itemCount + 1),
