@@ -232,13 +232,28 @@ myApplist.controller('customersCtrl', function($scope, $http) {
       
   });
 });
-
-
 //Using multiple ng-app withing one page
 angular.bootstrap(document.getElementById("App2"),['namesList']);
 angular.bootstrap(document.getElementById("App3"), ['AJAXfirst']);
 angular.bootstrap(document.getElementById("App4"), ['AJAXsecond']);
 angular.bootstrap(document.getElementById("App5"),['myApplist']);
+
+
+//$scope section
+mainAppScope.controller("shapeControllerScope" , function($scope){
+    $scope.message = "In Shape controller";
+    $scope.type = "Shape of Main controller";
+});
+mainAppScope.controller("circleController" , function($scope){
+    $scope.message = "In Shape controller";
+   
+});
+mainAppScope.controller("squareController" , function($scope){
+    $scope.message = "In Shape controller";
+    $scope.type = "Square";
+});
+
+
          
 
         

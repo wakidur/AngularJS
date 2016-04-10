@@ -15,4 +15,6 @@ var AJAXfirst = angular.module("AJAXfirst", []);
 var AJAXsecond = angular.module('AJAXsecond', []);
 var myApplist = angular.module('myApplist', []);
 
+//Scope
+ var mainAppScope = angular.module('mainAppScope', []);
 
