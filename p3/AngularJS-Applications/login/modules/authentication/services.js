@@ -5,8 +5,8 @@ angular.module('Authentication')
 .factory('AuthenticationService',
     ['Base64', '$http', '$cookieStore', '$rootScope', '$timeout',
     function (Base64, $http, $cookieStore, $rootScope, $timeout) {
-        var service = {};
-
+        var service = new Object;
+        service.function=
         service.Login = function (username, password, callback) {
 
             /* Dummy authentication for testing, uses $timeout to simulate api call

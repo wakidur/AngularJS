@@ -19,7 +19,6 @@ angular.module('BasicHttpAuthExample', [
             templateUrl: 'modules/authentication/views/login.html',
             hideMenus: true
         })
- 
         .when('/', {
             controller: 'HomeController',
             templateUrl: 'modules/home/views/home.html'
