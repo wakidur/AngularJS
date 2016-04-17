@@ -27,16 +27,19 @@ elementApp.directive('w3TestDirective', function() {
     }
 });
 
-restrictionsApp.directive('RestrictionDirective' , function() {
+restrictionsApp.directive('restrictionDirective' , function() {
     return{
-        restrict : "E", // Attribute
-        template : "<h1>Restrictions for Element name</h1>"
+        // restrict : "E", // Element
+        // template : "<h1>Restrictions for Element name</h1>"
 //        restrict : "A", // Attribute
 //        template : "<h1>Restrictions for Attribute</h1>"
-//        restrict : "C", // Attribute
-//        template : "<h1>Restrictions for Class</h1>"
-//        restrict : "M", // Attribute
-//        template : "<h1>Restrictions for Comment</h1>"
+       // restrict : "C", // Class
+       // template : "<h1>Restrictions for Class</h1>"
+        restrict : "M",
+        replace : true,
+        template : "<h1>Made by a directive!</h1>"
     }
-})
+});
+
+/*-----------------------AngularJS ng-model Directive---------------------*/
 
