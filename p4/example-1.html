@@ -20,39 +20,94 @@
   <body>
       <div class="container">
           <div class="row">
-              <div class="col-xs-6">
-                  <form id="App1" ng-app="autoUpdate" ng-controller="">
+              <div  class="col-xs-6">
+                   <h1>Angular Intro</h1>
+                 <!--   <div ng-app="">
+                <form>
                       <div class="form-group">
                           <label for="name" class="sr-only">Only for developer</label>
                           <input class="form-control" title="text" ng-model="name">
                       </div>
                       <div class="form-group">
                           <p class="form-control" >{{name}}</p>
-<!--                          <p class="form-control" ng-bind="name"></p>-->
                       </div>
                   </form>
-              </div>
-              <div class="col-xs-6">
-                  <div id="class-2" ng-app="initialValue" ng-init="firstName='Wakidur Rahman' " >
+                  <div   ng-init="firstName='Wakidur Rahman' " >
                       <div ng-bind="firstName"></div>
                   </div>
+                  </div>     -->             
               </div>
-          </div>
-      </div>
+              <div class="col-xs-6">
+                  <h1>AngularJS Expressions</h1>
+                  
+                  <!--<div ng-app="">
+                      <p>my first expression{{700 + 900}}</p>
+                  </div>-->
+<!--                  <form ng-app="" ng-init="myCol='red'">
+                      <input class="form-control" style="background-color: {{myCol}}" ng-model="myCol" value="{{myCol}}">
+                  </form>-->
+                  
+<!--                  <div ng-app="" ng-init="q = 120 ; c = 5">
+                      <p>Total in dollar {{ q * c }}</p>
+                  </div>-->
+<!--                  <div ng-app="" ng-init="q = 1550 ; c = 5">
+                      <p>Total in dollar <span ng-bind="q * c"></span></p>
+                  </div>-->
+<!--                  <div ng-app="" ng-init="firstName='John' ;lastName = 'Doe'">
+                      <p>The name is {{firstName + lastName}}</p>
+                      <p>My name is <span ng-bind="firstName + ' ' +lastName "></span></p>
+                  </div>-->
+<!--                  <div ng-app="" ng-init="person ={firstName:'John' ,lastName : 'Doe'}">
+                      <p>Angular Object {{person.firstName}}  {{person.lastName}}</p>
+                      <p>Angular Object <span ng-bind="person.firstName + '' + person.lastName"></span> </p>
+                  </div>-->
+                  <div ng-app="" ng-init="persons = [2,6,8,'kglf']">
+                      <p>Angular Arrays {{persons[2]}}  {{persons[0]}}</p>
+                      <p>Angular Arrays  <span ng-bind="persons[2]"></span> </p>
+                  </div>
+                  
+                  
+                  
+                  
+              </div>
+          </div><!--row -->
+          
+          
+          <div class="clearfix"></div>
+          <hr>
+          
+      </div><!--container-->
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/angular/angular.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
-        //Using multiple ng-app withing one page
-//angular.bootstrap(document.getElementById("class-1"),['namesList']);
-var autoUpdate = angular.module('autoUpdate',[]);
-var initialValue = angular.module('initialValue',[]);
-//var AJAXfirst = angular.module("initialValue", []);
-//angular.bootstrap(document.getElementsByClassName("class-1"),['dad']);
-angular.bootstrap(document.getElementById("App1"),['autoUpdate']);
-angular.bootstrap(document.getElementById("class-2"),['initialValue']);
-        </script>
+      
+    </script>
   </body>
 </html>
