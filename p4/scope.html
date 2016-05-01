@@ -38,20 +38,22 @@
                     <p>The scope of the controller's favorite color:</p>
                     <h1>{{color}}</h1>
                      
-                    <ul>
-                      <li ng-repeat="x in names | orderBy:'country'">
+                    <ul ng-repeat="x in names | orderBy:'country'">
+                      <li>
                         {{ x.name + ', ' + x.country }}
+                        <hr>
                       </li>
                     </ul>
-                    </div>
-
                     <p>The rootScope's favorite color is still:</p>
                     <h1>{{color}}</h1>
+                    </div>
+
+                    
 
 
 
 
-<hr>
+
 <br>
 <hr>
 <br>
@@ -79,9 +81,14 @@
         <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
         <!--Modules and Controllers in Files-->
-        <script> var app = angular.module('myApp', []);
+        <script> 
+
+
+        var app = angular.module('myApp', []);
+
             app.run(function($rootScope) {
                 $rootScope.color = 'Blue';
+
             });
             app.controller('myCtrl', function($scope) {
                 $scope.color = "red";
@@ -95,7 +102,7 @@
                     {name:'Birgit',country:'Denmark'},
                     {name:'Mary',country:'England'},
                     {name:'Kai',country:'Norway'}
-                    ];
+                ];
             });
            
          </script>
