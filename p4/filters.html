@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>AngularJS Directives</title>
+        <link rel="icon" href="images/favicon.ico">
+        <!-- Bootstrap -->
+        <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+        <!--    it is recommended that you load the AngularJS library either in the <head> or at the start of the <body>.
+            This is because calls to angular.module can only be compiled after the library has been loaded.-->
+        <script src="node_modules/angular/angular.js"></script>
+
+
+
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <!-- <div ng-app="myApp" ng-controller="personCtrl">
+                   <h1>Filters can be added in AngularJS to formate data </h1>
+                 <p> This name is {{lastName | uppercase}}</p>
+                 <p> This name is {{lastName | lowercase}}</p>
+
+                </div>
+                <div ng-App="myApp" ng-controller="namesCtrl">
+                    <ul>
+                        <li ng-repeat="x in names | orderBy : 'country'">
+                            {{x.name + ', ' + x.country}}
+                        </li>
+                    </ul>
+                </div> -->
+                <div ng-app="myApp" ng-controller="namesCtrl">
+
+                    <table border="1" width="100%">
+                      <tr>
+                        <th ng-click="orderByMe('name')">
+                            Name
+                        </th>
+                        <th ng-click="orderByMe('country')">
+                            Country
+                        </th>
+                      </tr>
+                      <tr ng-repeat="x in names | orderBy:myOrderBy">
+                        <td>
+                            {{x.name}}
+                        </td>
+                        <td>
+                            {{x.country}}
+                        </td>
+                      </tr>
+                    </table>
+
+                </div>
+                   
+
+                </div> <!--column-->
+            </div><!--row -->
+            <div class="clearfix"></div>
+            <hr>
+        </div><!--container-->
+
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <!--Modules and Controllers in Files-->
+        <script>
+            angular.module('myApp', []).controller('namesCtrl', function($scope) {
+                    $scope.names = [
+                        {name:'Jani',country:'Norway'},
+                        {name:'Carl',country:'Sweden'},
+                        {name:'Margareth',country:'England'},
+                        {name:'Hege',country:'Norway'},
+                        {name:'Joe',country:'Denmark'},
+                        {name:'Gustav',country:'Sweden'},
+                        {name:'Birgit',country:'Denmark'},
+                        {name:'Mary',country:'England'},
+                        {name:'Kai',country:'Norway'}
+                    ];
+              $scope.orderByMe = function(x) {
+                    $scope.myOrderBy = x;
+                }
+            });
+</script>
+
+    </body>
+</html>
