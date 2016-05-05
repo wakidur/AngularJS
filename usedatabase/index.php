@@ -44,7 +44,7 @@
             $http.get("modulsphp/dataajax.php")
                 .success(function(data){
                     $scope.data = data;
-                    console.log(data + "hello");
+                    console.log( data + "hello" );
                 })
                 .error(function() {
                     $scope.data = "error in fetching data";
