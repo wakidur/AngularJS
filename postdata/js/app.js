@@ -1,19 +1,27 @@
 $postModule = angular.module('postModule', []);
-var base_path = document.getElementById('base_path').value;
-$postModule.controller('PostController',function($scope, $http){
+
+//var base_path = document.getElementById('base_path').value;
+
+$postModule.controller('PostController', function($scope, $http){
+
 	$scope.post = {};
 	$scope.post.users = [];
 	$scope.tempUser = {};
 	$scope.editMode = false;
 	$scope.index = '';
 	
-	var url = base_path+'ajax.php';
+	//var url = base_path+'ajax.php';
+	//console.log(url);
 	
 	$scope.saveUser = function(){
 	    $http({
 	      method: 'post',
-	      url: url,
-	      data: $.param({'user' : $scope.tempUser, 'type' : 'save_user' }),
+	      //url: url,
+	      url: 'ajax.php',
+	      data: $.param({
+	      	'user' : $scope.tempUser,
+	      	 'type' : 'save_user'
+	      	  }),
 	      headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 	    }).
 	    success(function(data, status, headers, config) {
@@ -79,7 +87,8 @@ $postModule.controller('PostController',function($scope, $http){
 		if (r == true) {
 			$http({
 		      method: 'post',
-		      url: url,
+		      // url: url,
+		      url: 'ajax.php',
 		      data: $.param({ 'id' : user.id, 'type' : 'delete_user' }),
 		      headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 		    }).
@@ -100,7 +109,8 @@ $postModule.controller('PostController',function($scope, $http){
 	$scope.init = function(){
 	    $http({
 	      method: 'post',
-	      url: url,
+	      // url: url,
+	      url: 'ajax.php',
 	      data: $.param({ 'type' : 'getUsers' }),
 	      headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 	    }).

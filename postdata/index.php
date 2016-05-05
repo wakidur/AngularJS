@@ -12,12 +12,9 @@
 	<link href="node_modules/animate/animate.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	
-	<meta name="description" content="AngularJS Insert Update Delete Using PHP MySQL, angularjs php mysql crud, add update delete in angularjs, php angularjs mysql insert delete update">
-	<meta name="keywords" content="AngularJS Insert Update Delete Using PHP MySQL, angularjs php mysql crud, add update delete in angularjs, php angularjs mysql insert delete update">
-	<meta name="author" content="https://plus.google.com/+MuniAyothi/">
 	<title>AngularJS Insert Update Delete Using PHP MySQL</title>
 	
-	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,200' rel='stylesheet' type='text/css'>
+	<script src="node_modules/angular/angular.js"></script>
 	
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -29,47 +26,14 @@
     
 </head>
 <body data-ng-app="postModule" data-ng-controller="PostController" data-ng-init="init()">
-	<input type="hidden" id="base_path" value="<?php echo BASE_PATH; ?>"/>
-	<div role="navigation" class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle collapsed">
-					<span class="sr-only">Toggle navigation</span> 
-					<span class="icon-bar"></span> 
-					<span class="icon-bar"></span> 
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">AngularJS POST PHP</a>
-			</div>
-			<div id="navbar" class="collapse navbar-collapse">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="http://www.smarttutorials.net/"><i class="fa fa-home"></i>Home</a></li>
-					<li><a href="http://www.smarttutorials.net/demo/"> <i class="fa fa-book"></i> Demo </a></li>
-					<li><a href="http://blog.smarttutorials.net/"> <i class="fa fa-bank"></i> Blog </a></li>
-					<li><a href="http://forum.smarttutorials.net/"> <i class="fa fa-file"></i> Forum </a></li>
-				</ul>
-			</div>
-			<!--/.nav-collapse -->
-			<!--/.nav-collapse -->
-		</div>
-	</div>
+	<!-- //<input type="hidden" id="base_path" value="<?php echo BASE_PATH; ?>"/> -->
+	
 
 	<div class="container">
-		<div class="row" style="margin-top: 10px;">
-			<!-- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-				<script async
-					src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-				<ins class="adsbygoogle"
-					style="display: inline-block; width: 728px; height: 90px"
-					data-ad-client="ca-pub-4997600402648823" data-ad-slot="1675608998"></ins>
-				<script>
-				(adsbygoogle = window.adsbygoogle || []).push({});
-				</script>
-			</div>  -->
-		</div>
-
 		<div class="clearfix"></div>
-		<h2 class="title text-center"> AngularJS Insert Update Delete Using PHP MySQL</h2>
+		<h2 class="title text-center"> 
+			AngularJS Insert Update Delete Using PHP MySQL
+		</h2>
 
 		<div class="row mt80">
 			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 animated fadeInDown">
@@ -137,7 +101,10 @@
 								<td> {{user.email}} </td>
 								<td> {{user.companyName}} </td>
 								<td> {{user.designation}} </td>
-								<td> <span data-ng-click="editUser(user)"> Edit</span> | <span data-ng-click="deleteUser(user)">Delete</span> </td>
+								<td> 
+									<span data-ng-click="editUser(user)"> Edit</span> | 
+									<span data-ng-click="deleteUser(user)">Delete</span> 
+								</td>
 							</tr>
 						</tbody>
 					</table>
@@ -148,13 +115,13 @@
 
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	
 	<script src="node_modules/jquery/dist/jquery.js"></script>
 	<script src="node_modules/jquery/dist/jquery.validate.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 
-	<script src="node_modules/angular/angular.js"></script>
+	
 	<script src="js/app.js"></script>
+	
 </body>
 </html>
