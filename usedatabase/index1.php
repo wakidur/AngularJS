@@ -12,7 +12,7 @@
 
 <body>
 <br>
-  <div class="container ">
+  <div class="container">
     <div class="row">
       <h1>Angular $http GET Ajax Call</h1>
       <div ng-controller="student">
