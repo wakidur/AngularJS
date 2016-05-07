@@ -1,21 +1,13 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Document</title>
-    </head>
-    <body>
-        <p>Subjects:</p>
-        <table class="table">
-            <tr>
-                <th>Name</th>
-                <th>Marks</th>
-            </tr>
+<p>Subjects:</p>
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Marks</th>
+    </tr>
 
-            <tr ng-repeat = "subject in student.subjects">
-                <td>{{ subject.name }}</td>
-                <td>{{ subject.marks }}</td>
-            </tr>
-        </table>
-    </body>
-</html>
+    <tr ng-repeat = "subject in student.subjects">
+        <td>{{ subject.name}}</td>
+        <td>{{ subject.marks}}</td>
+    </tr>
+</table>
+    

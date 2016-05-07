@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <title>Angular JS Forms</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="images/favicon.ico">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <style>
+         table, th , td {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 5px;
+         }
+         
+         table tr:nth-child(odd) {
+            background-color: #f2f2f2;
+         }
+         
+         table tr:nth-child(even) {
+            background-color: #ffffff;
+         }
+      </style>
+<!--        <script src="node_modules/angular/angular.js"></script>-->
+<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+      
+      
+        
+        
+    </head>
+    <body>
+        <div class="jumbotron">
+            <div class="container">
+                <div ng-app="mainAppScope" ng-controller = "shapeControllerScope">
+                    <h2>Angular JS $scope</h2>
+                    <p>{{message}} <br/> {{type}}</p>
+                    <div ng-controller="circleController">
+                        <p>{{message}} <br/> {{type}}</p>
+                    </div>
+                    <div ng-controller="squareController">
+                            <p> {{message}} <br/> {{type}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+           
+            
+
+        </script>
+<!--         <script src="model/testAngularJS.js"></script>
+        <script src="controllers/testAngularJS.js"></script>
+  -->
+    </body>
+</html>
