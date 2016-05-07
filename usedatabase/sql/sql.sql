@@ -6,15 +6,19 @@ create table `students` (
     `country` varchar (30)
     
 );
-insert into `students` (`id`, `roll`,`name`,`city`,`country`) values("1","122222","Alfreds Futterkiste","Berlin","Germany");
-insert into `students` (`id`, `roll`,`name`,`city`,`country`) values("2","122223","Ana Trujillo Emparedados y helados","Berlin","Germany");
-insert into `students` (`id`, `roll`,`name`,`city`,`country`) values("3","122224","Antonio Moreno Taquería","Berlin","Germany");
-insert into `students` (`id`, `roll`,`name`,`city`,`country`) values("4","122225","Around the Horn","Berlin","Germany");
-insert into `students` (`id`, `roll`,`name`,`city`,`country`) values("5","122226","Alfreds Futterkiste","Berlin","Germany");
-insert into `students` (`id`, `roll`,`name`,`city`,`country`) values("6","122227","Alfreds Futterkiste","Berlin","Canada");
-insert into `students` (`id`, `roll`,`name`,`city`,`country`) values("7","122228","Alfreds Futterkiste","Berlin","Germany");
-insert into `students` (`id`, `roll`,`name`,`city`,`country`) values("8","122229","Alfreds Futterkiste","Berlin","Germany");
-insert into `students` (`id`, `roll`,`name`,`city`,`country`) values("9","122230","Alfreds Futterkiste","Berlin","Argentina");
+
+
+insert into `angularjs`.`students` (`id`, `roll`,`name`,`city`,`country`) values('112050','120','Wakidur','Dhaka','Bangladesh');
+
+
+insert into `angularjs`.`students` (`id`, `roll`,`name`,`city`,`country`) values("2","122223","Ana Trujillo Emparedados y helados","Berlin","Germany");
+insert into `angularjs`.`students` (`id`, `roll`,`name`,`city`,`country`) values("3","132224","Antonio Moreno Taqueria","Berlin","Germany");
+insert into `angularjs`.`students` (`id`, `roll`,`name`,`city`,`country`) values("4","142225","Around the Horn","Berlin","Germany");
+insert into `angularjs`.`students` (`id`, `roll`,`name`,`city`,`country`) values("5","152226","Alfreds Futterkiste","Berlin","Germany");
+insert into `angularjs`.`students` (`id`, `roll`,`name`,`city`,`country`) values("6","162227","Alfreds Futterkiste","Berlin","Canada");
+insert into `angularjs`.`students` (`id`, `roll`,`name`,`city`,`country`) values("7","172228","Alfreds Futterkiste","Berlin","Germany");
+insert into `angularjs`.`students` (`id`, `roll`,`name`,`city`,`country`) values("8","182229","Alfreds Futterkiste","Berlin","Germany");
+insert into `angularjs`.`students` (`id`, `roll`,`name`,`city`,`country`) values("9","192230","Alfreds Futterkiste","Berlin","Argentina");
 
 
 
@@ -37,4 +41,7 @@ create table `employ` (
     `id` int (11)
 )
 
-INSERT INTO `angular`.`employ` (`name`, `id`) VALUES ('Wakidur', '11205090');
+INSERT INTO `angularjs`.`employ` (`name`, `id`) VALUES ('Wakidur', '11205090');
+INSERT INTO `angularjs`.`employ` (`name`, `id`) VALUES ('Rohman', '11205050');
+
+INSERT INTO `angularjs`.`employ` (`name`, `id`) VALUES ('Rofiqul', '11200020');

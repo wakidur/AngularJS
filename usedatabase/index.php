@@ -40,11 +40,11 @@
       
        <script>
         var fetch = angular.module('myApp', []);
-        fetch.controller('dbCtrl', ['$scope', '$http', function ($scope, $http) {
-            $http.get("modulsphp/dataajax.php")
+        fetch.controller('dbCtrl', ['$scope', '$http', function ( $scope, $http) {
+            $http.get("ajax.php")
                 .success(function(data){
                     $scope.data = data;
-                    console.log(data + "hello");
+                    console.log( data + "hello");
                 })
                 .error(function() {
                     $scope.data = "error in fetching data";

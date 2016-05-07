@@ -54,7 +54,6 @@
     <head>
     <title>AngularJS GET request with PHP</title>
       <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
-
       <script src="node_modules/angular/angular.js"></script>
     </head>
 
@@ -68,8 +67,8 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>Name</th>
                         <th>Roll No</th>
+                        <th>Name</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -92,7 +91,7 @@
                 .success(function(data){
                     $scope.data = data;
                     console.log(data);
-                    console.log("hello")
+                    console.log("hello" + data)
                 })
                 .error(function() {
                     $scope.data = "error in fetching data";
