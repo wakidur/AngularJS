@@ -18,7 +18,7 @@ insert into `angularjs`.`students` (`id`, `roll`,`name`,`city`,`country`) values
 
 
 create table `employ` (
-    `name` varchar (1536),
+    `name` varchar (150),
     `id` int (11)
 )
 

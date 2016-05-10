@@ -7,7 +7,7 @@ Author :muni
 
 
 //site specific configuration declartion
-define( 'BASE_PATH', 'http://localhost/AngularJS/usedatabase/');
+define( 'BASE_PATH', 'http://localhost/post/');
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'angularjs');
 define('DB_USERNAME','root');
@@ -19,3 +19,4 @@ if (mysqli_connect_errno()) {
 	echo("Failed to connect, the error message is : ". mysqli_connect_error());
 	exit();
 }
+

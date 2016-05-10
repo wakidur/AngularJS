@@ -5,23 +5,28 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>AngularJS Insert Update Delete Using PHP MySQL</title>
+	
 	<!-- Bootstrap -->
-	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,200' rel='stylesheet' type='text/css'>	
-	<link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-	<link href="node_modules/font-awesome/css/font-awesome.css" rel="stylesheet">
-	<link href="node_modules/animate/animate.css" rel="stylesheet">
-	<link href="css/insert-update-delete-select-data-using-angularjs-and-php.css" rel="stylesheet">
-
-	<!-- Script -->
-	<script src="node_modules/modernizr/modernizr.js"></script>
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="node_modules/jquery/dist/jquery.js"></script>
-	<script src="node_modules/jquery/dist/jquery.validate.js"></script>
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script src="node_modules/angular/angular.js"></script>
-	<script src="js/insert-update-delete-select-data-using-angularjs-and-php.js"></script>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+	<link href="css/animate.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	
+	<meta name="description" content="AngularJS Insert Update Delete Using PHP MySQL, angularjs php mysql crud, add update delete in angularjs, php angularjs mysql insert delete update">
+	<meta name="keywords" content="AngularJS Insert Update Delete Using PHP MySQL, angularjs php mysql crud, add update delete in angularjs, php angularjs mysql insert delete update">
+	<meta name="author" content="https://plus.google.com/+MuniAyothi/">
+	<title>AngularJS Insert Update Delete Using PHP MySQL</title>
+	
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,200' rel='stylesheet' type='text/css'>
+	
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    
 </head>
 <body data-ng-app="postModule" data-ng-controller="PostController" data-ng-init="init()">
 	<input type="hidden" id="base_path" value="<?php echo BASE_PATH; ?>"/>
@@ -140,5 +145,13 @@
 			</div>
 		</div>
 	</div>
+
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="js/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/angular.min.js"></script>
+	<script src="js/angular-custom.js"></script>
 </body>
 </html>
