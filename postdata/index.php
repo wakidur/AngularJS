@@ -105,16 +105,16 @@
     </div>
 
 
- 
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="node_modules/jquery/dist/jquery.js"></script>
-	<script src="node_modules/jquery/dist/jquery.validate.js"></script>
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 
-	
-	<script src="js/app.js"></script>
-	
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/jquery/dist/jquery.validate.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+
+    <script src="js/app.js"></script>
+
 
 </body>
 </html>

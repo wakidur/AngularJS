@@ -3,7 +3,7 @@
 Site : http:www.smarttutorials.net
 Author :muni
 */
-require_once 'database_connection/config.php';
+require_once 'config.php';
 
 if( isset($_POST['type']) && !empty($_POST['type'] ) ){
 	$type = $_POST['type'];
@@ -79,12 +79,12 @@ function delete_user($mysqli, $id = ''){
 	try{
 		if(empty($id)) throw new Exception( "Invalid User." );
 		$query = "DELETE FROM `employee` WHERE `id` = $id";
-		if($mysqli->query( $query )){
+		if( $mysqli->query( $query )){
 			$data['success'] = true;
 			$data['message'] = 'User deleted successfully.';
 			echo json_encode($data);
 			exit;
-		}else{
+		} else{
 			throw new Exception( $mysqli->sqlstate.' - '. $mysqli->error );
 		}
 		
@@ -112,7 +112,8 @@ function getUsers($mysqli){
 			$data['data'][] = $row;
 		}
 		$data['success'] = true;
-		echo json_encode($data);exit;
+		echo json_encode($data);
+                exit;
 	
 	}catch (Exception $e){
 		$data = array();

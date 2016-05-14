@@ -14,10 +14,12 @@ $postModule.controller('PostController', function ($scope, $http) {
                 'type': 'save_user'
             }),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-        }).
-                success(function (data, status, headers, config) {
+        }).success(function (data, status, headers, config) {
+                    console.log($scope.editMode);            
                     if (data.success) {
+                        
                         if ($scope.editMode) {
+                            
                             $scope.post.users[$scope.index].id = data.id;
                             $scope.post.users[$scope.index].name = $scope.tempUser.name;
                             $scope.post.users[$scope.index].email = $scope.tempUser.email;
@@ -104,7 +106,7 @@ $postModule.controller('PostController', function ($scope, $http) {
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }).
                 success(function (data, status, headers, config) {
-                    if (data.success && !angular.isUndefined(data.data)) {
+                    if (data.success && angular.isDefined(data.data)) {
                         $scope.post.users = data.data;
                     } else {
                         $scope.messageFailure(data.message);
