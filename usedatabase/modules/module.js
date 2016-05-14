@@ -3,6 +3,9 @@
  */
 
 /*-------------------AngularJS Modules-------------------------------*/
+//index.php page
+var myApp = angular.module('myApp', []);
 
-var artistControllers = angular.module('artistControllers', ['ngAnimate']);
+//index1.php page
+ var fetch = angular.module('fetch', []);
 
