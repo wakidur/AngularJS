@@ -12,12 +12,9 @@
 	<link href="node_modules/animate/animate.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	
-	<meta name="description" content="AngularJS Insert Update Delete Using PHP MySQL, angularjs php mysql crud, add update delete in angularjs, php angularjs mysql insert delete update">
-	<meta name="keywords" content="AngularJS Insert Update Delete Using PHP MySQL, angularjs php mysql crud, add update delete in angularjs, php angularjs mysql insert delete update">
-	<meta name="author" content="https://plus.google.com/+MuniAyothi/">
 	<title>AngularJS Insert Update Delete Using PHP MySQL</title>
 	
-	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,200' rel='stylesheet' type='text/css'>
+	<script src="node_modules/angular/angular.js"></script>
 	
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -29,7 +26,7 @@
     
 </head>
 <body data-ng-app="postModule" data-ng-controller="PostController" data-ng-init="init()">
-    <input type="hidden" id="base_path" value="<?php echo BASE_PATH; ?>"/>
+
     <div class="container">
         <h2 class="title text-center"> AngularJS Insert Update Delete Using PHP MySQL</h2>
         <div class="row mt80">
@@ -108,14 +105,16 @@
     </div>
 
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+ 
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="node_modules/jquery/dist/jquery.js"></script>
+	<script src="node_modules/jquery/dist/jquery.validate.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 
-    <script src="node_modules/jquery/dist/jquery.js"></script>
-    <script src="node_modules/jquery/dist/jquery.validate.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+	
+	<script src="js/app.js"></script>
+	
 
-    <script src="node_modules/angular/angular.js"></script>
-    <script src="js/app.js"></script>
 </body>
 </html>
