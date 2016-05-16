@@ -10,7 +10,7 @@ $product = new Product($db);
  
 // get posted data
 $data = json_decode(file_get_contents("php://input")); 
- 
+
 // set product property values
 $product->name = $data->name;
 $product->price = $data->price;

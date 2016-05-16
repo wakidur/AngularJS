@@ -11,6 +11,13 @@ include_once 'objects/product.php';
 $database = new Database();
 $db = $database->getConnection();
 
+/*
+  //for using construct method
+     $db = new Database();
+  */
+ 
+
+
 // initialize object
 $product = new Product($db);
 
@@ -46,6 +53,4 @@ if ($num > 0) {
 echo '{"records":[' . $data . ']}';
 
 
-//echo $data;
-//print_r($data);
 ?>

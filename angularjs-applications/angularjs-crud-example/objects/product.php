@@ -11,29 +11,30 @@ class Product {
     public $description;
     public $price;
     public $created;
+    
+
+
 
     // constructor with $db as database connection 
     public function __construct($db) {
         $this->conn = $db;
     }
-
+    /*for using construct method
+      public function __construct(Database $db) {
+        $this->conn = $db;
+    }*/
+    
+    
+    
+    
     // read products
     function readAll() {
-
         // select all query
-        $query = "SELECT 
-                id, name, description, price, created 
-            FROM 
-                " . $this->table_name . "
-            ORDER BY 
-                id DESC";
-
+        $query = "SELECT id, name, description, price, created FROM " . $this->table_name . " ORDER BY id ASC";
         // prepare query statement
         $stmt = $this->conn->prepare($query);
-
         // execute query
         $stmt->execute();
-
         return $stmt;
     }
 
