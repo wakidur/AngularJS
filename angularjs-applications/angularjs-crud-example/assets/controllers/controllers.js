@@ -7,7 +7,10 @@ app.controller('productsCtrl', function ($scope, $http) {
 //            angular.forEach($scope.names, function(item){
 //                console.log( item.id + " " + item.name + " " +item.description + " " +item.price);  
 //            });
-        });
+            angular.forEach($scope.names, function(item){
+                    console.log( item.id );  
+                });
+            })
     };
     
     
@@ -38,7 +41,7 @@ app.controller('productsCtrl', function ($scope, $http) {
             'price': $scope.price
         }
         ).success(function (data, status, headers, config) {
-//            console.log(data);
+            console.log(data);
             // tell the user new product was created
             Materialize.toast(data, 4000);
 
