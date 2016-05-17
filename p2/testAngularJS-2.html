@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>AngularJS Directives 05/04/2016</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="images/favicon.ico">
+        <link rel="stylesheet" href="css/bootstrap.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Project name</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <form class="navbar-form navbar-right">
+                        <div class="form-group">
+                            <input type="text" placeholder="Email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" placeholder="Password" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-success">Sign in</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        
+        
+        <div class="clearfix"></div>
+        
+        
+        
+        
+        
+        <div class="jumbotron">
+            <div class="container">
+                <h1>Sample Application</h1>
+                <div ng-app = "" ng-init = "countries = [{locale:'en-US',name:'United States'}, {locale:'en-GB', name:'United Kingdom'}, {locale:'en-FR', name:'France'}]">
+                    <p> Enter your Name : <input type="text" ng-model="writeInfo"></p>
+                    <p> Hello <spna ng-bind="writeInfo"></spna> !</p>
+                    <h2> List of Counties with location </h2>
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-info" ng-repeat = "Mycountrysdfadf in countries">
+                            {{ 'Country: ' + Mycountrysdfadf.name + ', ---Locale : ---' + Mycountrysdfadf.locale }}
+                        </li>
+                   
+                        
+                    </ul>
+                    
+                </div>
+
+
+                
+            </div>
+        </div>
+        
+        
+        <script src="node_modules/angular/angular.js"></script>
+    </body>
+</html>

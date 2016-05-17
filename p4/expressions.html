@@ -1,0 +1,32 @@
+<style type="text/css">
+	
+</style>
+<script src="node_modules/angular/angular.js"></script>
+<script>
+var app = angular.module('expressionExample',[]);
+	app.controller('ExampleController', ['$scope', function($scope) {
+  var exprs = $scope.exprs = [];
+  $scope.expr = '3*10|currency';
+  $scope.addExp = function(expr) {
+    exprs.push(expr);
+  };
+
+  $scope.removeExp = function(index) {
+    exprs.splice(index, 1);
+  };
+}]);
+
+</script>
+<div ng-app="expressionExample">
+<div ng-controller="ExampleController" class="expressions">
+  Expression:
+  <input type='text' ng-model="expr" size="80"/>
+  <button ng-click="addExp(expr)">Evaluate</button>
+  <ul>
+   <li ng-repeat="expr in exprs track by $index">
+     [ <a href="" ng-click="removeExp($index)">X</a> ]
+     <code>{{expr}}</code> => <span ng-bind="$parent.$eval(expr)"></span>
+    </li>
+  </ul>
+</div>
+</div>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>AngularJS Directives</title>
+        <link rel="icon" href="images/favicon.ico">
+        <!-- Bootstrap -->
+        <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+        <!--    it is recommended that you load the AngularJS library either in the <head> or at the start of the <body>.
+            This is because calls to angular.module can only be compiled after the library has been loaded.-->
+        <script src="node_modules/angular/angular.js"></script>
+
+
+
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div ng-app="myApp">
+                    <p>The rootScope's favorite color:</p>
+                    <h1>{{color}}</h1>
+                    <div ng-controller="myCtrl">
+                    <p>The scope of the controller's favorite color:</p>
+                    <h1>{{color}}</h1>
+                     
+                    <ul ng-repeat="x in names | orderBy:'country'">
+                      <li>
+                        {{ x.name + ', ' + x.country }}
+                        <hr>
+                      </li>
+                    </ul>
+                    <p>The rootScope's favorite color is still:</p>
+                    <h1>{{color}}</h1>
+                    </div>
+                </div>
+                   
+
+                </div> <!--column-->
+
+            </div><!--row -->
+
+
+            <div class="clearfix"></div>
+            <hr>
+        </div><!--container-->
+
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <!--Modules and Controllers in Files-->
+        <script> 
+
+
+        var app = angular.module('myApp', []);
+
+            app.run(function($rootScope) {
+                $rootScope.color = 'Blue';
+
+            });
+            app.controller('myCtrl', function($scope) {
+                $scope.color = "red";
+                $scope.names = [
+                    {name:'Jani',country:'Norway'},
+                    {name:'Carl',country:'Sweden'},
+                    {name:'Margareth',country:'England'},
+                    {name:'Hege',country:'Norway'},
+                    {name:'Joe',country:'Denmark'},
+                    {name:'Gustav',country:'Sweden'},
+                    {name:'Birgit',country:'Denmark'},
+                    {name:'Mary',country:'England'},
+                    {name:'Kai',country:'Norway'}
+                ];
+            });
+           
+         </script>
+
+    </body>
+</html>
