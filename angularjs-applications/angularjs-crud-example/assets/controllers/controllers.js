@@ -50,29 +50,23 @@ app.controller('productsCtrl', function ($scope, $http) {
             console.log(data);
             // tell the user new product was created
             Materialize.toast(data, 4000);
-
             // close modal
             $('#modal-product-form').closeModal();
-
             // clear modal content
             $scope.clearForm();
-
             // refresh the list
             $scope.getAll();
         });
     };
+    
     // retrieve record to fill out the form
     $scope.readOne = function (id) {
-
         // change modal title
         $('#modal-product-title').text("Edit Product");
-
         // show udpate product button
         $('#btn-update-product').show();
-
-        // show create product button
+        // hide create product button
         $('#btn-create-product').hide();
-
         // post id of product to be edited
         $http.post('read_one.php', {
             'id': id
