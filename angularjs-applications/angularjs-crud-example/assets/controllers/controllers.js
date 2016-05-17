@@ -1,30 +1,27 @@
 app.controller('productsCtrl', function ($scope, $http) {
-    
+
     // read products
     $scope.getAll = function () {
         /*$http.get("read_products.php").success(function (response) {
-            $scope.names = response.records;
-            angular.forEach($scope.names, function(item){
-                //console.log( item.id + " " + item.name + " " +item.description + " " +item.price);  
-                console.log( item.id + "========");  
-            });
-        });*/
+         $scope.names = response.records;
+         angular.forEach($scope.names, function(item){
+         //console.log( item.id + " " + item.name + " " +item.description + " " +item.price);  
+         console.log( item.id + "========");  
+         });
+         });*/
         $http({
             method: 'GET',
             url: 'read_products.php'
-        }).success(function(response, status, header, config) {
+        }).success(function (response, status, header, config) {
             $scope.names = response.records;
-            angular.forEach($scope.names, function(item){
-                console.log( item.id + "========");  
+            angular.forEach($scope.names, function (item) {
+                console.log(item.id + "========");
             });
-          }).error(function(response, status, header, config) {
-              // error handler
-            console.log( "respnse error" + response.records);
-          }); 
+        }).error(function (response, status, header, config) {
+            // error handler
+            console.log("respnse error" + response.records);
+        });
     };
-    
-    
-    
     
     // more angular JS codes will be here
     $scope.showCreateForm = function () {
@@ -38,17 +35,18 @@ app.controller('productsCtrl', function ($scope, $http) {
         $('#btn-create-product').show();
 
     };
+    
     // create new product 
     $scope.createProduct = function () {
         // fields in key-value pairs
         $http.post(
-            'create_product.php', 
+            'create_product.php',
             {
                 'name': $scope.name,
                 'description': $scope.description,
                 'price': $scope.price
             }
-        ).success(function (data, status, headers, config) {
+            ).success(function (data, status, headers, config) {
             console.log(data);
             // tell the user new product was created
             Materialize.toast(data, 4000);
@@ -94,7 +92,7 @@ app.controller('productsCtrl', function ($scope, $http) {
                     Materialize.toast('Unable to retrieve record.', 4000);
                 });
     };
-     // update product record / save changes
+    // update product record / save changes
     $scope.updateProduct = function () {
         $http.post('update_product.php', {
             'id': $scope.id,
@@ -135,25 +133,25 @@ app.controller('productsCtrl', function ($scope, $http) {
             });
         }
     };
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-     // clear variable / form values
+
+
+
+
+
+
+
+
+
+
+
+    // clear variable / form values
     $scope.clearForm = function () {
         $scope.id = "";
         $scope.name = "";
         $scope.description = "";
         $scope.price = "";
     };
-    
+
 });
 
 
