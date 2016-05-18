@@ -110,7 +110,7 @@ catch(PDOException $exception){
             <td></td>
             <td>
                 <input type='submit' value='Save Changes' />
-        <a href='read.php'>Back to read records</a>
+                <a href='read.php'>Back to read records</a>
             </td>
         </tr>
     </table>
