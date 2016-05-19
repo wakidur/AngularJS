@@ -28,7 +28,9 @@
 <body data-ng-app="postModule" data-ng-controller="PostController" data-ng-init="init()">
 
     <div class="container">
+        
         <h2 class="title text-center"> AngularJS Insert Update Delete Using PHP MySQL</h2>
+        
         <div class="row mt80">
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 animated fadeInDown">
                 <div class="alert alert-danger text-center alert-failure-div" role="alert" style="display: none">
@@ -37,39 +39,45 @@
                 <div class="alert alert-success text-center alert-success-div" role="alert" style="display: none">
                     <p></p>
                 </div>
+                
                 <form novalidate name="userForm" >
+                    
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Name</label> 
-                        <input data-ng-minlength="3" required type="text" class="form-control" id="name" name="name" placeholder="Name" data-ng-model='tempUser.name'>
-                        <span class="help-block error" data-ng-show="userForm.name.$invalid && userForm.name.$dirty">
+                        <label for="name">Name</label> 
+                        <input ng-minlength="3"  type="text" class="form-control" id="name" name="name" placeholder="Name" ng-model='tempUser.name' required>
+                        <span class="help-block error" ng-show="userForm.name.$invalid && userForm.name.$dirty">
                             {{getError(userForm.name.$error, 'name')}}
                         </span>
                     </div>
+                    
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email</label> 
-                        <input data-ng-minlength="3" required type="email" class="form-control" id="email" name="email" placeholder="Email" data-ng-model='tempUser.email'>
-                        <span class="help-block error" data-ng-show="userForm.email.$invalid && userForm.email.$dirty">
+                        <label for="email">Email</label> 
+                        <input ng-minlength="3" type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model='tempUser.email' required>
+                        <span class="help-block error" ng-show="userForm.email.$invalid && userForm.email.$dirty">
                             {{getError(userForm.email.$error, 'email')}}
                         </span>
                     </div>
+                    
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Company Name</label>  
-                        <input data-ng-minlength="3" required type="text" class="form-control" id="company_name" name="company_name" placeholder="Company Name" data-ng-model='tempUser.companyName'>
-                        <span class="help-block error" data-ng-show="userForm.company_name.$invalid && userForm.company_name.$dirty">
+                        <label for="company_name">Company Name</label>  
+                        <input minlength="3"  type="text" class="form-control" id="company_name" name="company_name" placeholder="Company Name" ng-model='tempUser.companyName' required>
+                        <span class="help-block error" ng-show="userForm.company_name.$invalid && userForm.company_name.$dirty">
                             {{getError(userForm.company_name.$error, 'company_name')}}
                         </span>
                     </div>
+                    
                     <div class="form-group">
-                        <label for="exampleInputFile">Designation</label> 
-                        <input data-ng-minlength="3" required type="text" class="form-control" id="designation" name="designation" placeholder="Designation" data-ng-model='tempUser.designation'>
-                        <span class="help-block error" data-ng-show="userForm.designation.$invalid && userForm.designation.$dirty">
+                        <label for="designation">Designation</label> 
+                        <input ng-minlength="3"  type="text" class="form-control" id="designation" name="designation" placeholder="Designation" ng-model='tempUser.designation' required>
+                        <span class="help-block error" ng-show="userForm.designation.$invalid && userForm.designation.$dirty">
                             {{getError(userForm.designation.$error, 'designation')}}
                         </span>
                     </div>
+                    
                     <!-- <input type="hidden" data-ng-model='tempUser.id'>  -->
                     <div class="text-center">
-                        <button ng-disabled="userForm.$invalid" data-loading-text="Saving User..." ng-hide="tempUser.id" type="submit" class="btn btn-save" data-ng-click="addUser()">Save User</button>
-                        <button ng-disabled="userForm.$invalid" data-loading-text="Updating User..." ng-hide="!tempUser.id" type="submit" class="btn btn-save" data-ng-click="updateUser()">Update User</button>
+                        <button ng-disabled="userForm.$invalid" data-loading-text="Saving User..." ng-hide="tempUser.id" type="submit" class="btn btn-save" ng-click="addUser()">Save User</button>
+                        <button ng-disabled="userForm.$invalid" data-loading-text="Updating User..." ng-hide="!tempUser.id" type="submit" class="btn btn-save" ng-click="updateUser()">Update User</button>
                     </div>
 
                 </form>
@@ -89,7 +97,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr data-ng-repeat="user in post.users | orderBy : '-id'">
+                            <tr data-ng-repeat="user in post.users | orderBy : 'id'">
                                 <th scope="row">{{user.id}}</th>
                                 <td> {{user.name}} </td>
                                 <td> {{user.email}} </td>
@@ -101,6 +109,9 @@
                     </table>
                 </div>
             </div>
+            
+            
+            
         </div>
     </div>
 

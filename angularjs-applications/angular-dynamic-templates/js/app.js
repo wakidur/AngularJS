@@ -3,7 +3,7 @@ var app = angular.module('myApp', []);
 app.config(function ($sceDelegateProvider) {
     $sceDelegateProvider.resourceUrlWhitelist(['self', '**']);
 });
-
+https://docs.angularjs.org/api/ng/provider/$sceDelegateProvider
 app.constant('URL', 'data/');
 
 app.factory('DataService', function ($http, URL) {
