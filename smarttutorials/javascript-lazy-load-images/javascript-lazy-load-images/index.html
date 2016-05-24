@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Lazy Load Images Using JavaScript PHP, jquery lazy load images, jquery lazy image loader, jquery lazy load example, lazy loader php example">
+    <meta name="keywords" content="Lazy Load Images Using JavaScript PHP, jquery lazy load images, jquery lazy image loader, jquery lazy load example, lazy loader php example">
+    <meta name="author" content="muni">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Lazy Load Images Using JavaScript PHP</title>
+    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Noto+Serif:400,700"> 
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/sticky-footer-navbar.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://www.smarttutorials.net/">Smart Tutorials</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"> <a href="http://www.smarttutorials.net/"><i class="fa fa-home"></i>Home</a> </li>
+            <li><a href="http://www.smarttutorials.net/demo/"> <i class="fa fa-book"></i> Demo </a></li>
+            <li><a href="http://blog.smarttutorials.net/"> <i class="fa fa-bank"></i> Blog </a></li>
+            <li><a href="http://forum.smarttutorials.net/"> <i class="fa fa-file"></i> Forum </a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <div class="container content">
+    	<h2 class="text-center"> JavaScript Lazy Load Images Example  </h2>
+		<img class="b-lazy img img-responsive img-thumbnail" 
+			src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
+			data-src="images/1.jpg"
+			alt="Image 1"/>
+		<img class="b-lazy img img-responsive img-thumbnail" 
+			src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+			data-src="images/2.jpg" 
+			alt="Image 2" />
+		<img class="b-lazy img img-responsive img-thumbnail" 
+			src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+			data-src="images/3.jpg" 
+			alt="Image 3"/>
+		<img class="b-lazy img img-responsive img-thumbnail" 
+			src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+			data-src="images/4.jpg" 
+			alt="Image 4"/>
+		<img class="b-lazy img img-responsive img-thumbnail" 
+			src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+			data-src="images/5.jpg" 
+			alt="Image 5" />
+		<img class="b-lazy img img-responsive img-thumbnail" 
+			src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+			data-src="images/6.jpg" 
+			alt="Image 6" />
+		<img class="b-lazy img img-responsive img-thumbnail" 
+			src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+			data-src="images/7.jpg" 
+			alt="Image 7" />
+			
+		<img class="b-lazy img img-responsive img-thumbnail" 
+			src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+			data-src="images/8.jpg" 
+			alt="Image 8"/>
+		<img class="b-lazy img img-responsive img-thumbnail" 
+			src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+			data-src="images/9.jpg" 
+			alt="Image 9" />
+		<img class="b-lazy img img-responsive img-thumbnail" 
+			src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+			data-src="images/10.jpg" 
+			alt="Image 10" />
+		<img class="b-lazy img img-responsive img-thumbnail" 
+			src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+			data-src="images/11.jpg" 
+			alt="Image 11" />
+			
+		<img class="b-lazy img img-responsive img-thumbnail" 
+			src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+			data-src="images/12.jpg" 
+			alt="Image 12" />
+		<img class="b-lazy img img-responsive img-thumbnail" 
+			src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+			data-src="images/13.jpg" 
+			alt="Image 13" />
+		<img class="b-lazy img img-responsive img-thumbnail" 
+			src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+			data-src="images/14.jpg" 
+			alt="Image 14" />	
+			
+		<img class="b-lazy img img-responsive img-thumbnail" 
+			src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+			data-src="images/15.jpg" 
+			alt="Image 15" />
+		<img class="b-lazy img img-responsive img-thumbnail" 
+			src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+			data-src="images/16.jpg" 
+			alt="Image 16" />		  	
+    </div>
+	<h2>&nbsp;</h2>
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted text-center" style="color:#fff">&copy; Copyright By <a href="http://smarttutorials.net/" target="_blank" style="color:#bdc3c7;text-decoration: none;">SmartTutorials.net</a>.</p>
+      </div>
+    </footer> 
+	<script src="js/blazy.min.js"></script>
+	<script>
+		(function() {
+	        // Initialize
+	    	var bLazy = new Blazy();
+	    })();
+	</script>
+  </body>
+</html>
+
+
+
+

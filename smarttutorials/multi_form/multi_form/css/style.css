@@ -1,0 +1,88 @@
+
+#border{
+		height : 450px;
+		width : 800px;
+		border: 30px solid #13202c;
+		border-radius: 25px;
+		background-color: #1abc9c;
+		margin: auto;
+	    margin-bottom: 50px;
+}
+	@font-face{
+	font-family: Lobster;
+	src: url('Lobster.otf');
+	
+	}
+	p{
+	   font-family: Lobster;
+	   color: #ddd;
+	   font-size:20px;
+	   color: #13202c;
+	}
+	h1{
+	   text-align: center;
+	   font-family: Lobster;
+	   font-size: 40px;
+	   text-decoration: underline;
+	   color: #13202c;
+	}
+	
+	#secondStep, #thirdStep, #fourthStep{
+	   display:none;
+	}
+	.login-field:focus{
+       color: green;
+    }
+	.login-field{
+       width: 250px;
+	   height: 25px;
+	   margin-bottom: 10px;
+	   border-radius: 3px;
+	   border: 2px solid #fff;
+    }
+	.linker{
+		 padding-top:130px;
+		 margin-left:50px;
+    }
+	.align{
+		  margin-top: -190px;
+		  padding-left: 300px;
+    }
+	.next1{
+      margin-left:175px; width: 80px
+    }
+  
+	.next{
+		  margin-left:95px; width: 80px
+	}
+	.right{
+	  Color: #fff;
+	  margin-left: 50px;
+	
+	}
+	.error { border: 1px solid red; }
+	
+	.hide{
+	  display: none;
+	}
+	#message{
+	  display: none;
+	  border: 2px solid white;
+	  border-radius: 10px 10px 10px 10px;
+	  color: white;
+	  display: none;
+	  text-align: center;
+	  width: 400px;
+	  margin: -170px 0 0 230px;
+	  position: relative;
+	}
+	#message p{
+	 color: white;
+	}
+	#close{
+	   position: absolute;
+       right: -8px;
+       top: -10px;
+	}
+	
+	
