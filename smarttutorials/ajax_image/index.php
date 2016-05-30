@@ -36,7 +36,13 @@
             
             
             <div class="panel">
-                <div id='page-content' class="table-responsive"> <p>Initialize</p> </div>
+                <div class="panel-heading">
+                    <h1>Image are come from data base</h1>
+                </div>
+                <div class="panel-body">
+                    <div id='page-content' class="table-responsive"> <p>Initialize</p> </div>
+                </div>
+                
             </div>
         </div>
         <input type="hidden" id='base_path' value="<?php echo BASE_PATH; ?>">

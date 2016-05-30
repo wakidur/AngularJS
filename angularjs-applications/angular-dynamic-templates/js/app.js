@@ -3,26 +3,26 @@ var app = angular.module('myApp', []);
 app.config(function ($sceDelegateProvider) {
     $sceDelegateProvider.resourceUrlWhitelist(['self', '**']);
 });
-https://docs.angularjs.org/api/ng/provider/$sceDelegateProvider
+//https://docs.angularjs.org/api/ng/provider/$sceDelegateProvider
 app.constant('URL', 'data/');
 
 app.factory('DataService', function ($http, URL) {
     var getData = function () {
-        return $http.get(URL + 'content.json');
+        return $http.get( URL + 'content.json' );
     };
 
     return {
-        getData: getData
+        getData : getData
     };
 });
 
 app.factory('TemplateService', function ($http, URL) {
     var getTemplates = function () {
-        return $http.get(URL + 'templates.json');
+        return $http.get( URL + 'templates.json' );
     };
 
     return {
-        getTemplates: getTemplates
+        getTemplates : getTemplates
     };
 });
 
