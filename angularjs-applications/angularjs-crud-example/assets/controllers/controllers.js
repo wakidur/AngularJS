@@ -3,12 +3,14 @@ app.controller('productsCtrl', function ($scope, $http) {
     // read products
     $scope.getAll = function () {
         /*$http.get("read_products.php").success(function (response) {
+
          $scope.names = response.records;
          angular.forEach($scope.names, function(item){
          //console.log( item.id + " " + item.name + " " +item.description + " " +item.price);  
          console.log( item.id + "========");  
          });
          });*/
+
         $http({
             method: 'GET',
             url: 'read_products.php'
@@ -21,6 +23,7 @@ app.controller('productsCtrl', function ($scope, $http) {
             // error handler
             console.log("respnse error" + response.records);
         });
+
     };
 
     // more angular JS codes will be here
@@ -49,6 +52,11 @@ app.controller('productsCtrl', function ($scope, $http) {
         ).success(function (data, status, headers, config) {
             console.log(data);
             // tell the user new product was created
+            // Materialize.toast(message, displayLength, className, completeCallback);
+             //Materialize.toast('I am a toast', 4000,'rounded',function(){alert('Your toast was dismissed')});
+             //Materialize.toast('I am a toast!', 3000, 'rounded') // 'rounded' is the class I'm applying to the toast
+            //Materialize.toast('I am a toast!', 4000) // 4000 is the duration of the toast
+            //<a class="btn" onclick="Materialize.toast('I am a toast', 4000)">Toast!</a>
             Materialize.toast(data, 4000);
             // close modal
             $('#modal-product-form').closeModal();

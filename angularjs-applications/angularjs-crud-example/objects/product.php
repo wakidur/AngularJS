@@ -61,6 +61,7 @@ class Product {
     }
 
     // used when filling up the update product form
+
     public function readOne() {
        // query to read single record
         $query = "SELECT name, price, description  FROM " . $this->table_name . "WHERE id = ? LIMIT  0,1";
@@ -116,6 +117,7 @@ class Product {
             return false;
         }
     }
+
 }
 
 ?>

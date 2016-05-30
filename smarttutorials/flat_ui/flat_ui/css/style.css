@@ -1,0 +1,17 @@
+body{min-height: 2000px;}
+h1{border-bottom-color: #FF0084;border-bottom-style: solid;color: #FF0084;font-family: 'Philosopher';margin-left: 20%;padding: 5% 0 0;width: 60%;}
+.social-icons{padding:0 1%;}
+.social-icons i {font-size:18px;}
+.facebook, .twitter, .google, .linkedin, .foursquare, .vimeo, .flickr, .pinterest, .instagram, .tumblr {width:100%;height:40px; padding-top:2%; margin-top:2%;}
+.modal-icons{margin-left: -10px; margin-right: 20px;}
+.google, .google:hover{background-color:#dd4b39;border:2px solid #dd4b39;color:#fff;}
+.twitter, .twitter:hover{ background-color: #00aced; border:2px solid #00aced;color: #fff;}
+.facebook, .facebook:hover{background-color: #3b5999; border:2px solid #3b5999;color:#fff;}
+.linkedin, .linkedin:hover{background-color: #007bb6; border: 2px solid #007bb6; color:#fff;}
+.vimeo, .vimeo:hover{ background-color: #aad450; border: 2px solid #aad450; color:#fff; }
+.flickr, .flickr:hover{ background-color: #ff0084; border: 2px solid #ff0084; color:#fff; }
+.foursquare, .foursquare:hover{ background-color: #0072b1; border: 2px solid #0072b1; color:#fff;}
+.pinterest, .pinterest:hover{  background-color: #cb2027; border: 2px solid #cb2027; color:#fff; }
+.instagram, .instagram:hover{ background-color: #517fa4; border: 2px solid #517fa4; color:#fff; } 
+.tumblr, .tumblr:hover { background-color: #32506d; border: 2px solid #32506d; color:#fff; }
+

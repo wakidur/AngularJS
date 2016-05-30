@@ -1,0 +1,17 @@
+###To remove folder/directory only from git repository and not from the local try 3 simple steps.
+##Steps to remove directory
+
+git rm -r --cached FolderName
+git commit -m "Removed folder from repository"
+git push origin master
+
+
+
+
+###Remove directory from git and local
+##You could checkout 'master' with both directories;
+
+git rm -r one-of-the-directories
+git commit -m "Remove duplicated directory"
+git push origin <your-git-branch> (typically 'master', but not always)
+

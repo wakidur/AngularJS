@@ -96,15 +96,21 @@ catch(PDOException $exception){
     <table>
         <tr>
             <td>Name</td>
-            <td><input type='text' name='name' value="<?php echo htmlspecialchars($name, ENT_QUOTES);  ?>" /></td>
+            <td>
+            <input type='text' name='name' value="<?php echo htmlspecialchars($name, ENT_QUOTES);  ?>" />
+            </td>
         </tr>
         <tr>
             <td>Description</td>
-            <td><textarea name='description'><?php echo htmlspecialchars($description, ENT_QUOTES);  ?></textarea></td>
+            <td>
+                <textarea name='description'><?php echo htmlspecialchars($description, ENT_QUOTES);  ?></textarea>
+            </td>
         </tr>
         <tr>
             <td>Price</td>
-            <td><input type='text' name='price'  value="<?php echo htmlspecialchars($price, ENT_QUOTES);  ?>" /></td>
+            <td>
+                <input type='text' name='price'  value="<?php echo htmlspecialchars($price, ENT_QUOTES);  ?>" />
+            </td>
         </tr>
         <tr>
             <td></td>
