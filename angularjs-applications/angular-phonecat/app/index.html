@@ -1,0 +1,79 @@
+<!doctype html>
+<!--<html lang="en" ng-app>
+  <head>
+    <meta charset="utf-8">
+    <title>My HTML File</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <script src="bower_components/angular/angular.js"></script>
+  </head>
+  <body>
+      <div  class="container">
+          
+      
+    <p>Nothing here {{'yet' + '!'}}</p>
+    <p>1 + 2 = {{1 + 2}}</p>
+    <ul>
+        <li>
+            <span>Nexus S</span>
+            <p>
+                Fast just got faster with Nexus S.
+            </p>
+        </li>
+        <li>
+            <span>Motorola XOOM™ with Wi-Fi</span>
+            <p>
+                The Next, Next Generation tablet.
+            </p>
+        </li>
+    </ul>
+    
+    <p>Total number of phones: 2</p>
+</div>
+  </body>
+</html>
+-->
+
+
+
+<html ng-app="phonecatApp">
+<head>
+
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="app.js"></script>
+</head>
+<body ng-controller="PhonelistController">
+  <ul>
+    <li ng-repeat="phone in phones">
+      <span>{{phone.name}}</span>
+      <p>{{phone.snippet}}</p>
+    </li>
+  </ul>
+    
+    
+    
+    
+    
+<div id="id01"></div>
+<script>
+function myFunction(arr) {
+    var out = "";
+    var i;
+    for(i = 0; i<arr.length; i++) {
+        out += '<a href="' + arr[i].url + '">' + 
+        arr[i].display + '</a><br>';
+    }
+    document.getElementById("id01").innerHTML = out;
+}
+</script>
+
+<script src="myTutorials.js"></script>
+    
+    
+    
+    
+    
+    
+    
+    
+</body>
+</html>
