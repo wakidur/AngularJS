@@ -1,0 +1,9 @@
+Understanding view.
+
+Most other templating systems consume a static string template and combine it with data, resulting in a new string. The resulting text is then innerHTML ed into an element.
+This means that any changes to the data need to be re-merged with the template and then innerHTML ed into the DOM. 
+
+
+Angular is different. The Angular compiler consumes the DOM, not sting templates. The result is a linking function , which when combined with a scope model result in a live view. The view and scope model binding are transparent. The developer dons not need to make any special calls to update the view. And because innerHTML  is not used, you won't accidentally clobber user input.Furthermore, Angular directive can contain not just thext bindings, but behavioral constructs as well,
+
+
