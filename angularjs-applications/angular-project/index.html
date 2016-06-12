@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<!--    <link rel="stylesheet" href="libs/materialize/css/materialize.css">-->
+    <script src="libs/angular/angular.min.js"></script>
+    <script src="libs/angular/angular-route.js"></script>
+    <script src="libs/angular/angular-animate.js"></script>
+    <script src="js/scriptmain.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/custom.css">
+<!--
+    
+    
+-->
+</head>
+<body>
+  
+<!--  step -1-->
+<!--
+  <div ng-app="myApp">
+   <div ng-controller = "MyController">
+      <h1>{{author.name}}</h1>
+      <p>{{ author.title + ', ' + author.company }}</p>
+   </div>
+</div>
+<script>
+var myApp = angular.module('myApp',[]);
+    myApp.controller('MyController',['$scope',function($scope){
+        $scope.author = {
+            'name' : 'Ray Villalobos',
+            'title' : 'Staff Author',
+            'company' : 'Lynda.com'
+        }
+    }]);
+
+</script>
+-->
+<!--  step-2 -->
+<!--
+  <div ng-app="myApp">
+   <div class="main" ng-controller = "MyController">
+     <div class="search">
+    <h1>Artist Directory</h1>
+    <label>search: </label>
+    <input ng-model="query" placeholder="Search for artists" autofocus>
+
+    <label class="formgroup">by:
+      <select ng-model="artistOrder">
+        <option value="name">Name</option>
+        <option value="reknown">Reknown</option>
+      </select>
+    </label>
+
+    <label class="formgroup">
+      <input type="radio" ng-model="direction" name="direction" checked>
+      ascending
+     </label>
+    <label class="formgroup">
+      <input type="radio" ng-model="direction" name="direction" value="reverse">
+      descending
+    </label>
+   
+  </div>
+      <ul class="artistlist">
+        <li class="artist cf" ng-repeat="item in artists | filter: query | orderBy: artistOrder:direction">
+          <img ng-src="images/{{item.shortname}}_tn.jpg" alt="Photo of {{item.name}}">
+          <div class="info">
+            <h2>{{item.name | uppercase}}</h2>
+            <h3>{{item.reknown}}</h3>
+          </div>
+        </li>
+      </ul>
+    </div>
+    </div>
+-->
+   
+<!--   step -3-->
+   
+<!--   <div class="main" ng-view></div>-->
+   
+<!--   step - 6-->
+   <div class="main" ng-view></div>
+    
+</body>
+</html>
