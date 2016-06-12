@@ -85,7 +85,15 @@
 
 
 <!--step - 5-->
-<!--
+
+<!--var artistControllers = angular.module('artistControllers', []);
+
+artistControllers.controller('ListController', ['$scope', '$http', function($scope, $http) {
+  $http.get('js/data.json').success(function(data) {
+    $scope.artists = data;
+    $scope.artistOrder = 'name';
+  });
+}]);-->
 
 <section class="artistpage">
   <div class="search">
@@ -111,22 +119,24 @@
    
   </div>
   <ul class="artistlist">
-    <li class="artist cf" ng-repeat="item in artists | filter: query | orderBy: artistOrder:direction">
-      <a href="#/details/{{artists.indexOf(item)}}">
+    <li class="artist cf" ng-repeat="item in artists | filter: query | orderBy: artistOrder:direction | limitTo: 10" > 
+      <a href="#/details/{{artists.indexOf(item)}} /{{item.id}}">
         <img ng-src="images/{{item.shortname}}_tn.jpg" alt="Photo of {{item.name}}">
         <div class="info">
           <h2>{{item.name}}</h2>
           <h3>{{item.reknown}}</h3>
+          <p>{{artists.indexOf(item) }}  || {{item.id}}</p>
+          
         </div>
       </a>
     </li>
   </ul>  
 </section>
 
--->
+
 
 <!--step-6-->
-
+<!--
 <section class="artistpage">
   <div class="search">
     <h1>Artist Directory</h1>
@@ -168,4 +178,4 @@
   
 </section>
 
-
+-->

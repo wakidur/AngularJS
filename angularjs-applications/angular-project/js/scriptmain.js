@@ -38,7 +38,7 @@ myApp.config(['$routeProvider', function($routeProvider) {
 */
 //step - 5
 
-/*
+
 var myApp = angular.module('myApp', [
   'ngRoute',
   'artistControllers'
@@ -46,28 +46,29 @@ var myApp = angular.module('myApp', [
 
 myApp.config(['$routeProvider', function($routeProvider) {
   $routeProvider.
-  when('/list', {
-    templateUrl: 'partials/list.html',
-    controller: 'ListController'
+    when('/list', {
+        templateUrl: 'partials/custom.html',
+        controller: 'ListController'
   }).
-  when('/details/:itemId', {
-    templateUrl: 'partials/details_custom.html',
-    controller: 'DetailsController'
+    when('/details/:itemId', {
+        templateUrl: 'partials/details_custom.html',
+        controller: 'DetailsController'
   }).
-  otherwise({
-    redirectTo: '/list'
+    otherwise({
+        redirectTo: '/list'
   });
 }]);
-*/
+
 
 //step -6
 
+/*
 var myApp = angular.module('myApp', [
-  'ngRoute',
-  'artistControllers'
+    'ngRoute',
+    'artistControllers'
 ]);
 
-myApp.config(['$routeProvider', function($routeProvider) {
+ myApp.config(['$routeProvider', function($routeProvider) {
   $routeProvider.
   when('/list', {
     templateUrl: 'partials/custom.html',
@@ -81,3 +82,4 @@ myApp.config(['$routeProvider', function($routeProvider) {
     redirectTo: '/list'
   });
 }]);
+*/

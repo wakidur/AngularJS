@@ -1,10 +1,6 @@
 language: node_js
 node_js:
-<<<<<<< HEAD
   - '4.4'
-=======
-  - 0.10
->>>>>>> cff037e56318987b4e0a30f7990842cf5792fbe2
 
 env: BROWSERS=firefox E2E_BROWSERS=Firefox
 

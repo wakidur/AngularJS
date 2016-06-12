@@ -52,7 +52,7 @@ artistControllers.controller('DetailsController', ['$scope', '$http','$routePara
 */
 //step - 5
 
-/*
+
 var artistControllers = angular.module('artistControllers', []);
 
 artistControllers.controller('ListController', ['$scope', '$http', function($scope, $http) {
@@ -68,17 +68,20 @@ artistControllers.controller('DetailsController', ['$scope', '$http','$routePara
     $scope.whichItem = $routeParams.itemId;
   });
 }]);
-*/
+
 
 // step - 6
+//var myApp = angular.module('myApp', ['ngRoute','artistControllers' ]);
 
-var artistControllers = angular.module('artistControllers', ['ngAnimate']);
+/*var artistControllers = angular.module('artistControllers', ['ngAnimate']);
 
 artistControllers.controller('ListController', ['$scope', '$http', function($scope, $http) {
   $http.get('js/data.json').success(function(data) {
     $scope.artists = data;
     $scope.artistOrder = 'name';
-  });
+  }).error(function () {
+        $scope.error = "An Error has occured while loading posts!";
+    });
 }]);
 
 artistControllers.controller('DetailsController', ['$scope', '$http','$routeParams', function($scope, $http, $routeParams) {
@@ -98,5 +101,8 @@ artistControllers.controller('DetailsController', ['$scope', '$http','$routePara
       $scope.nextItem = 0;
     }
 
-  });
+  }).error(function () {
+        $scope.error = "An Error has occured while loading posts!";
+    });
 }]);
+*/
