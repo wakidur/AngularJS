@@ -1,5 +1,6 @@
 'use strict';
 
+
 angular.module('phonecatApp').
     config(['$locationProvider' ,'$routeProvider',
         function($locationProvider, $routeProvider) {

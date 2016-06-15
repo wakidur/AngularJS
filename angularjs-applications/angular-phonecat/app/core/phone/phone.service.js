@@ -1,5 +1,6 @@
 'use strict';
 
+
 angular.module('core.phone').
     factory( 'Phone', ['$resource',
         function($resource) {
@@ -11,4 +12,5 @@ angular.module('core.phone').
             }
           });
         }
+
   ]);
