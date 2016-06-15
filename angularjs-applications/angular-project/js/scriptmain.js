@@ -38,7 +38,7 @@ myApp.config(['$routeProvider', function($routeProvider) {
 */
 //step - 5
 
-
+/*
 var myApp = angular.module('myApp', [
   'ngRoute',
   'artistControllers'
@@ -59,10 +59,10 @@ myApp.config(['$routeProvider', function($routeProvider) {
   });
 }]);
 
-
+*/
 //step -6
 
-/*
+
 var myApp = angular.module('myApp', [
     'ngRoute',
     'artistControllers'
@@ -82,4 +82,3 @@ var myApp = angular.module('myApp', [
     redirectTo: '/list'
   });
 }]);
-*/
