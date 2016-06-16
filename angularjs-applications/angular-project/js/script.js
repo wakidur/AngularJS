@@ -71,36 +71,56 @@ artistControllers.controller('DetailsController', ['$scope', '$http','$routePara
 */
 
 // step - 6
-
-
- var artistControllers = angular.module('artistControllers', ['ngAnimate']);
-    artistControllers.controller('ListController', ['$scope', '$http', function($scope, $http) {
-      $http.get('js/data.json').success(function(data) {
-        $scope.artists = data;
-        $scope.artistOrder = 'name';
-      }).error(function () {
+(function(angular){
+    var artistControllers = angular.module('artistControllers', ['ngAnimate']);
+ 
+    artistControllers.controller('ListController', ['$scope', '$http', function( $scope, $http ) {
+        $http.get('js/custom_data.json').success(function(data) {
+            $scope.artists = data;
+            $scope.artistOrder = 'name';
+        }).error(function () {
             $scope.error = "An Error has occured while loading posts!";
         });
     }]);
 
-    artistControllers.controller('DetailsController', ['$scope', '$http','$routeParams', function($scope, $http, $routeParams) {
-      $http.get('js/data.json').success(function(data) {
-        $scope.artists = data;
-        $scope.whichItem = $routeParams.itemId;
+    artistControllers.controller('DetailsController', [
+        '$scope', 
+        '$http',
+        '$routeParams', 
+        function($scope, $http, $routeParams) {
+            $http.get('js/custom_data.json').success(function(data) {
+                $scope.artists = data;
+                
+               // artists.indexOf(item);
+                //5
+                
+                
+                $scope.whichItem = $routeParams.itemId;
+                
+                console.log( $scope.whichItem + " Which Item" );
 
-        if ($routeParams.itemId > 0) {
-          $scope.prevItem = Number($routeParams.itemId)-1;
-        } else {
-          $scope.prevItem = $scope.artists.length-1;
-        }
+                if ( $routeParams.itemId > 0) {
+                    console.log( $routeParams.itemId + " check" );
+                    $scope.prevItem = Number($routeParams.itemId) - 1;
+                    console.log( $scope.prevItem + " true" + " " + Number($routeParams.itemId)   );
+                } else {
+                    $scope.prevItem = $scope.artists.length - 1;
+                    console.log($scope.prevItem + "else");
+                }
 
-        if ($routeParams.itemId < $scope.artists.length-1) {
-          $scope.nextItem = Number($routeParams.itemId)+1;
-        } else {
-          $scope.nextItem = 0;
-        }
+                if ( $routeParams.itemId < $scope.artists.length - 1 ) {
+                    console.log($routeParams.itemId + " Other condetion check");
+                    $scope.nextItem = Number($routeParams.itemId) + 1;
+                    console.log( $scope.nextItem + " nextItem");
+                } else {
+                    $scope.nextItem = 0;
+                    console.log( $scope.nextItem + " 0  nextItem");
+                }
 
-      }).error(function () {
-            $scope.error = "An Error has occured while loading posts!";
-        });
+            }).error(function () {
+                $scope.error = "An Error has occured while loading posts!";
+            });
     }]);
+})(window.angular)
+
+ 
