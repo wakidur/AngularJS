@@ -21,10 +21,10 @@ var myApp = angular.module('myApp', []);
     }]);
 
     // Config and Routes 
-    myApp.config(['$routeProvider',function ($routeProvider) {
+    myApp.config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/', {
-            templateUrl: "home.html"
+                templateUrl: "home.html"
             })
             .when('/item/:id', {
                 templateUrl: "item.html"
@@ -32,16 +32,16 @@ var myApp = angular.module('myApp', []);
             otherwise('/');
     }]);
 
-    myApp.controller('headerController', function ($scope, $location) {
+    myApp.controller('headerController',['$scope','$location', function ($scope, $location) {
         $scope.goHome = function () {
             $location.path('/');
+            console.log($location.path('/'));
         };
-    });
-
-
+    }]);
 
     function Ctrl($scope) {
         $scope.greeting = 'hello';
+        console.log($scope.greeting);
     }
     
     myApp.controller('ListController', function ($scope, $route, $location, $http, Categories) {
@@ -56,10 +56,12 @@ var myApp = angular.module('myApp', []);
             //Sort by date
             if (tabIndex == 1) {
                 //alert(tabIndex);
+                console.log(tabIndex);
                 $scope.orderProp = 'date';
             }
             //Sort by views 
             if (tabIndex == 2) {
+                console.log(tabIndex);
                 $scope.orderProp = 'views';
             }
         };
@@ -72,6 +74,8 @@ var myApp = angular.module('myApp', []);
         }
 
     });
+    
+    
     // Controllers
     myApp.controller('ItemController', function ($scope, $route, $location, $http, Items) {
         Items.get(function (response) {

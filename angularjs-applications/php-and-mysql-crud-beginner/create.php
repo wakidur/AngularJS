@@ -2,39 +2,50 @@
 <html>
     <head>
         <title>PDO Create New Record</title>
-  
+         <link rel="stylesheet" href="css/bootstrap.css">
     </head>
 <body>
  
 <!-- dynamic content will be here -->
  <!-- just a header -->
-<h1>PDO: Create a Record</h1>
  
-<!-- html form here where the product information will be entered -->
-<form action='create.php' method='post'>
-    <table border='0'>
-        <tr>
-            <td>Name</td>
-            <td><input type='text' name='name' /></td>
-        </tr>
-        <tr>
-            <td>Description</td>
-            <td><textarea name='description'></textarea></td>
-        </tr>
-        <tr>
-            <td>Price</td>
-            <td><input type='text' name='price' /></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <input type='submit' value='Save' /> 
-                <a href='read.php'>Back to read records</a>
-            </td>
-        </tr>
-    </table>
-    
-</form>
+ <div class="container">
+     <div class="row">
+         <div class="col-xs-12 text-center"> 
+             <h1 class="text-info">PDO: Create a Record</h1> 
+         </div>
+         <form class="form-horizontal" action='create.php' method='post'>
+             <div class="form-group">
+                 <label for="name" class="col-sm-2 control-label">Name</label>
+                 <div class="col-sm-10">
+                     <input type='text' name='name' id="name" class="form-control"  placeholder="Your name " />
+                 </div>
+             </div>
+             <div class="form-group">
+                 <label for="price" class="col-sm-2 control-label">Price</label>
+                 <div class="col-sm-10">
+                     <input type='text' name='price' id="price" class="form-control"  placeholder="Product price" />
+                 </div>
+             </div>
+             <div class="form-group">
+                 <label for="description" class="col-sm-2 control-label">Description</label>
+                 <div class="col-sm-10">
+                     <textarea name='description' id="description" class="form-control" rows="3" placeholder="Product description"></textarea>
+                 </div>
+             </div>
+             <div class="form-group">
+                 <div class="col-sm-offset-2 col-sm-4">
+                     <button type="submit" class="btn btn-primary">Save</button>
+                 </div>
+                 <div class=" col-sm-6 text-right">
+                     <a class="btn btn-primary" href='read.php'>Back to home</a>
+                 </div>
+             </div>
+         </form>
+     </div>
+ </div>
+
+
 <?php
 if($_POST){
  
@@ -51,8 +62,11 @@ if($_POST){
  
         // posted values
         $name=htmlspecialchars(strip_tags($_POST['name']));
+        echo '$name';
         $description=htmlspecialchars(strip_tags($_POST['description']));
+        echo '$description';
         $price=htmlspecialchars(strip_tags($_POST['price']));
+        echo '$price';
  
         // bind the parameters
         $stmt->bindParam(':name', $name);
@@ -65,7 +79,10 @@ if($_POST){
          
         // Execute the query
         if($stmt->execute()){
-            echo "<div>Record was saved.</div>";
+            print_r($stmt);
+            echo '<div class="container">';
+            echo '<div class="alert alert-success" role="alert">Record was saved.</div>';
+            echo '</div>';
         }else{
             die('Unable to save record.');
         }
