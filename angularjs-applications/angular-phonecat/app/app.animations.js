@@ -1,4 +1,5 @@
-'use strict';
+(function(angular){
+  'use strict';
 
 angular.
   module('phonecatApp').
@@ -40,4 +41,6 @@ angular.
         if (wasCanceled) element.stop();
       };
     }
-  });
+  });  
+})(window.angular);
+

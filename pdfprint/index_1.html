@@ -1,0 +1,23 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<button id="pringPDF">Print</button>
+	<p class="robi"></p>
+	<!-- <iframe id="printIrame" name="printIrame" src="a.pdf" width="100%" height="100%" style="display: none"></iframe> -->
+	<iframe id="pdf-iframe" name="pdf-iframe" width="100%" height="100%" style="display: none"></iframe>
+	<script src="jquery-1.11.3.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#pringPDF').on('click', function(){
+				var pdf_url = "a.pdf"
+				$(".robi").append("Hello world ");
+				$('#pdf-iframe').attr("src", pdf_url).load(function(){
+    				document.getElementById('pdf-iframe').contentWindow.print();
+				});
+			});
+		});
+	</script>
+</body>
+</html>

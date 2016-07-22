@@ -1,0 +1,24 @@
+<html>
+<head>
+	<title>Print PDF</title>
+</head>
+<body>
+	<button id="print">Print</button>
+	<iframe id="printIrame" name="printIrame" src="a.pdf" width="100%" height="100%" style="display: none"></iframe>
+	<script src="jquery-1.11.3.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#print').on('click', function(){
+				var $iframe = document.getElementById('printIrame');
+				$iframe.focus();
+				$iframe.contentWindow.print();
+				/*window.frames['printIrame'].focus();
+				window.frames['printIrame'].print();*/
+			});
+		});
+	</script>
+
+
+	
+</body>
+</html>
