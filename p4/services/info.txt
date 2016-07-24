@@ -1,3 +1,0 @@
-1. There are two ways t create a service.
-a. factory 
-b. service
