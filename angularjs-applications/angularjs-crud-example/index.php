@@ -131,7 +131,7 @@
         <!--custom angular files-->
         <script src="assets/moduls/moduls.js"></script>
         <script src="assets/controllers/controllers.js"></script>
-        <script src="assets/js/app.js"></script>
+        <script src="assets/js/angular-custom.js.js"></script>
         
 
 

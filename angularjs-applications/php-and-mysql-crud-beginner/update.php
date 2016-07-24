@@ -2,15 +2,12 @@
 <html>
     <head>
         <title>Update A Record</title>
-  
+         <link rel="stylesheet" href="css/bootstrap.css">     
     </head>
 <body>
- 
-<!-- dynamic content will be here -->
-<!-- just a header label -->
-<h1>PDO: Update a Record</h1>
- 
 <?php
+
+
 // get passed parameter value, in this case, the record ID
 // isset() is a PHP function used to verify if a value is there or not
 $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
@@ -46,7 +43,10 @@ if($_POST){
          
         // Execute the query
         if($stmt->execute()){
-            echo "Record was updated.";
+            echo '<div class="container">';
+            echo '<div class="alert alert-success" role="alert">Record was updated..</div>';
+            echo '</div>';
+            
         }else{
             echo 'Unable to update record. Please try again.';
         }
@@ -58,8 +58,13 @@ if($_POST){
         die('ERROR: ' . $exception->getMessage());
     }
 }
+ 
+ 
 ?>
+
 <?php
+
+
 // get passed parameter value, in this case, the record ID
 // isset() is a PHP function used to verify if a value is there or not
 $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
@@ -68,14 +73,11 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
 try {
     // prepare select query
     $query = "SELECT id, name, description, price FROM products_beginner WHERE id = ? LIMIT 0,1";
-    $stmt = $con->prepare( $query );
-     
+    $stmt = $con->prepare( $query );    
     // this is the first question mark
-    $stmt->bindParam(1, $id);
-     
+    $stmt->bindParam(1, $id);  
     // execute our query
     $stmt->execute();
-     
     // store retrieved row to a variable
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
      
@@ -83,43 +85,52 @@ try {
     $name = $row['name'];
     $description = $row['description'];
     $price = $row['price'];
+    
 }
  
 // show error
 catch(PDOException $exception){
     die('ERROR: ' . $exception->getMessage());
 }
+  
+ 
 ?>
 
 <!--we have our html form here where new user information will be entered-->
-<form action='update.php?id=<?php echo htmlspecialchars($id); ?>' method='post' border='0'>
-    <table>
-        <tr>
-            <td>Name</td>
-            <td>
-            <input type='text' name='name' value="<?php echo htmlspecialchars($name, ENT_QUOTES);  ?>" />
-            </td>
-        </tr>
-        <tr>
-            <td>Description</td>
-            <td>
-                <textarea name='description'><?php echo htmlspecialchars($description, ENT_QUOTES);  ?></textarea>
-            </td>
-        </tr>
-        <tr>
-            <td>Price</td>
-            <td>
-                <input type='text' name='price'  value="<?php echo htmlspecialchars($price, ENT_QUOTES);  ?>" />
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <input type='submit' value='Save Changes' />
-                <a href='read.php'>Back to read records</a>
-            </td>
-        </tr>
-    </table>
-</form>
+<div class="container">
+     <div class="row">
+         <div class="col-xs-12 text-center"> 
+             <h1 class="text-info">PDO: Create a Record</h1> 
+         </div>
+         <form class="form-horizontal" action='update.php?id=<?php echo htmlspecialchars($id); ?>' method='post' border='0'>
+             <div class="form-group">
+                 <label for="name" class="col-sm-2 control-label">Name</label>
+                 <div class="col-sm-10">
+                     <input type='text' name='name' id="name" class="form-control"  value="<?php echo htmlspecialchars($name, ENT_QUOTES);  ?>" />
+                 </div>
+             </div>
+             <div class="form-group">
+                 <label for="price" class="col-sm-2 control-label">Price</label>
+                 <div class="col-sm-10">
+                     <input type='text' name='price' id="price" class="form-control"  value="<?php echo htmlspecialchars($price, ENT_QUOTES);  ?>"  />
+                 </div>
+             </div>
+             <div class="form-group">
+                 <label for="description" class="col-sm-2 control-label">Description</label>
+                 <div class="col-sm-10">
+                     <textarea name='description' id="description" class="form-control" rows="3"><?php echo htmlspecialchars($description, ENT_QUOTES);  ?></textarea>
+                 </div>
+             </div>
+             <div class="form-group">
+                 <div class="col-sm-offset-2 col-sm-4">
+                     <button type="submit" class="btn btn-primary">Save Changes</button>
+                 </div>
+                 <div class=" col-sm-6 text-right">
+                     <a class="btn btn-primary" href='read.php'>Back to home</a>
+                 </div>
+             </div>
+         </form>
+     </div>
+ </div>
 </body>
 </html>

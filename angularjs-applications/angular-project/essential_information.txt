@@ -1,0 +1,44 @@
+##Up and Running with AngularJS
+    #What is AngularJS?
+        a.JavaScritp Framework
+        b.For creating Single page applications
+        c.with a heart of JavaScritp
+
+    #Advantages
+        a.Excellent templating engine
+        b.Handles DOM masterfully
+        c.Easy data manipulation
+
+    MVC Architecture
+        a.Models
+        b.Views
+        c.Controller
+
+    #Core Features
+        a.Directive
+        b.Data binding
+        c.Filters
+        d.Modules
+        e.Routes
+        f.Controllers
+
+
+AngularJS API docs
+
+Angular Prefixes $ and $$
+To prevent accidental name collisions with your code.
+
+name of public object $
+name of private object $$.
+
+
+ngRoute : use ngRoute to enable URL routing to your application. The ngRoute module supports URL management vai both hashbar(#) and HTML5 pushState.
+
+Service/ Factories
+This following services are used for route management
+$routeParams is used to access the querysting values present in tye URL.
+$route is used to access the details of th route that is currently being accessed.
+$routeProvider is used to register routes for the application
+
+Directives 
+the ngView directive will display the template of the current route with the page.

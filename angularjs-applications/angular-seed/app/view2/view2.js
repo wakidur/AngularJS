@@ -1,15 +1,22 @@
 'use strict';
 
-angular.module('myApp.view2', ['ngRoute'])
-
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view2', {
-    templateUrl: 'view2/view2.html',
-    controller: 'View2Ctrl'
-  });
-}])
-
-.controller('View2Ctrl', [function() {
+angular.module('myApp.view2',['ngRoute'])
+    .controller('View2Ctrl', ['$scope',function($scope) {
+            $scope.data = "hello world wakidur";
+            $scope.value = "we are here for you";
+            $scope.json = [
+                {
+                    "id" : 1,
+                    "name" : "wakidur",
+                    "department" : "IT",
+                    "title" : "UI/UX developer"
+                },
+                {
+                    "id" : 2,
+                    "name" : "wakidur",
+                    "department" : "IT",
+                    "title" : "UI/UX developer"
+                }
+            ]
         console.log("hello view 2");
-
-}]);
+    }]);

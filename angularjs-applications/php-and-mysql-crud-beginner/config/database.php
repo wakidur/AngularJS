@@ -1,15 +1,20 @@
 <?php
-// used to connect to the database
-$host = "localhost";
-$db_name = "angularjs";
-$username = "root";
-$password = "";
+/************PDO **********************/
+$host = 'localhost';
+$db = 'angularjs';
+$user = 'root';
+$pass = '';
+
+// For MySQL:
+//$con = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
+
  
 try {
-    $con = new PDO("mysql:host={$host};dbname={$db_name}", $username, $password);
+//    $con = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
+      $con = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
 }
  
-// show error
+// show error if database connection is fail
 catch(PDOException $exception){
     echo "Connection error: " . $exception->getMessage();
 }
