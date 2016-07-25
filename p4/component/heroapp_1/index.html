@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Example - Heroapp_1</title>
+        <script src="libs/angular.js"></script>
+        <script src="index.js"></script>
+        <script src="heroDetail.js"></script>
+    </head>
+    <body ng-app="heroApp">
+        <!-- components match only elements -->
+        <div ng-controller="mainCtrl as x">
+            <b>Hero</b><br>
+            <hero-detail hero="x.hero"></hero-detail>
+        </div>
+    </body>
+
+</html>

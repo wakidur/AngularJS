@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="./node_modules/angular/angular.min.js"></script>
+<!--        <script src="script.js"></script>-->
+    </head>
+    <body>
+        <div ng-app="drag">
+            <span draggable>Drag ME</span>
+        </div>
+        <script>
+            /*
+            (function(angular){
+    'use strict';
+    var dragElement = angular.module('drag',[]);
+        dragElement.directive('draggable',function($document){
+            return function(scope,element,attr){
+                var startX = 0,
+                    startY = 0,
+                        x = 0,
+                        y = 0;
+                element.css({
+                    position: 'relative',
+                    border : '1px solid red',
+                    backgroundColor : 'lightgrey',
+                    cursor : 'pointer',
+                    display : 'block',
+                    width : '65px'
+                });
+                element.on('mousedown', function(even){
+                    // prevent default dragging of selected content
+                    event.preventDefault();
+                    startX = even.screenX - x;
+                    startY = even.screenY - y;
+                    $document.on('mousemove', mousemove);
+                    $document.on('mouseup', mouseup);
+                    
+                });
+                function mousemove (event) {
+                    y = event.screenY - startY;
+                    x = event.screenX - startX;
+                    element.css({
+                        top : y + 'px',
+                        left : x + 'px'
+                    });
+                function mouseup() {
+                    $document.off('mousemove', mousemove);
+                    $document.off('mouseup', mouseup);
+                }}
+            }
+        })
+})(window.angular);
+
+*/
+
+(function(angular) {
+  'use strict';
+angular.module('drag', []).
+  directive('draggable', function($document) {
+    return function(scope, element, attr) {
+      var startX = 0, startY = 0, x = 0, y = 0;
+      element.css({
+       position: 'relative',
+       border: '1px solid red',
+       backgroundColor: 'lightgrey',
+       cursor: 'pointer',
+       display: 'block',
+       width: '65px'
+      });
+      element.on('mousedown', function(event) {
+        // Prevent default dragging of selected content
+        event.preventDefault();
+        startX = event.screenX - x;
+        startY = event.screenY - y;
+        $document.on('mousemove', mousemove);
+        $document.on('mouseup', mouseup);
+      });
+
+      function mousemove(event) {
+        y = event.screenY - startY;
+        x = event.screenX - startX;
+        element.css({
+          top: y + 'px',
+          left:  x + 'px'
+        });
+      }
+
+      function mouseup() {
+        $document.off('mousemove', mousemove);
+        $document.off('mouseup', mouseup);
+      }
+    };
+  });
+})(window.angular);
+        </script>
+    </body>
+</html>
