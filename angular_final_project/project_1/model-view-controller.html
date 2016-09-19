@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="App" lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project_1</title>
+    <link rel="icon" href="images/favicon.ico">
+    <!--script file links-->
+    <script src="libs/angular/angular.min.js"></script>
+    
+   
+    </head>
+    <body>
+        <!--View (template)-->
+<!--        
+        <div ng-controller="MyController">
+            <h1>{{author.name}}</h1>
+            <p>{{author.title + " , " +author.company}}</p>
+            <span>{{author}}</span>
+        </div>-->
+        
+        <div ng-controller="MyController">
+            <div  ng-repeat="author in authors">
+                <h1>{{author.name}}</h1>
+                  <p>{{author.title + " , " +author.company}}</p>
+                  <span>{{author}}</span>
+            </div> 
+        </div>
+        
+        
+        <script>
+            /*
+            var myApp = angular.module('App',[]);
+                //controller
+                myApp.controller('MyController',['$scope', function($scope){
+                    //model
+                    $scope.author = {
+                        'name' : 'Wakidur',
+                        'title' : 'Front-End web developer',
+                        'company' : 'Big Web'
+                    };
+                }]);
+            */
+           
+           /*
+            var myApp = angular.module('App',[]);
+                //controller
+                myApp.controller('MyController',['$scope','$http', function($scope, $http){
+                    //model
+                    $http.get("js/author.json")
+                       .then(function(response) {
+                           $scope.author = response.data;
+                       }, function myError(response){
+                           $scope.author = response.statusText;
+                       })
+                       
+                }]);
+            */
+           /*
+            var myApp = angular.module('App',[]);
+                //controller
+                myApp.controller('MyController',['$scope','$http', function($scope, $http){
+                    //model
+                    $http.get("js/author_1.json")
+                       .then( function(response) {
+                           $scope.authors = response.data;
+                           }, function myError(response){
+                           $scope.authors = response.statusText;
+                        })
+                }]);
+            
+            */
+           var myApp = angular.module('App',[]);
+                //controller
+                myApp.controller('MyController',['$scope','$http', function($scope, $http){
+                    //model
+                    $http({
+                        method: 'GET',
+                        url : 'js/author_1.json'
+                    }).then(function(response) {
+                           $scope.authors = response.data;
+                           }, function myError(response){
+                           $scope.authors = response.statusText;
+                    })
+                }]);
+
+
+        
+             
+        </script>
+        
+    </body>
+</html>

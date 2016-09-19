@@ -146,16 +146,17 @@ a.small {
 /* Search Styles */
 
 .search {
+  height: 150px;
   background: #063642;
-    color: #EEE8D5;
-    width: 90%;
-    min-width: 320px;
-    max-width: 500px;
-    margin: 0 auto;
-    margin-top: 10px;
-    border-radius: 20px;
-    padding: 20px 30px;
-    z-index: 20;
+  color: #EEE8D5;
+  width: 90%;
+  min-width: 320px;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 10px;
+  border-radius: 20px;
+  padding: 20px 30px;
+  z-index: 20;
 }
 
 .search h1 {
@@ -212,7 +213,9 @@ a.small {
     outline: 0;
     margin-bottom: 10px;
 }
-
+.form-group .formgroup{
+    float: left;
+}
 .search .formgroup input {
   border: 1px solid rgba(0,0,0,0.3);
   display: inline;
