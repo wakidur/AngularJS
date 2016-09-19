@@ -1,0 +1,72 @@
+<!doctype html>
+<html ng-app="Eggly">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="icon" href="assets/img/favicon.ico">
+        <title>Eggly</title>
+
+        <link rel="stylesheet" href="vendor/normalize/normalize.css">
+        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css">
+
+        <link rel="stylesheet" href="assets/css/eggly.css">
+        <link rel="stylesheet" href="vendor/animations/animate.css">
+    </head>
+    <body ng-controller="MainCtrl">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3 col-md-2 sidebar">
+                    <a href="#" ng-click="setCurrentCategory(null)">
+                        <img class="logo" src="assets/img/eggly-logo.png">
+                    </a>
+                    <ul class="nav nav-sidebar">
+                        <li ng-repeat="category in categories" ng-class="{'active' : isCurrentCategory(category)}">
+                            <a href="#" ng-click="setCurrentCategory(category)">{{category.name}}</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                    <div ng-repeat="bookmark in bookmarks | filter:{category:currentCategory.name}">
+                        <button type="button" class="close">&times;</button>
+                        <button ng-click="startEditing()" type="button" class="btn btn-link">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+                        <a href="{{bookmark.url}}" target="_blank">{{bookmark.title}} |<span>{{bookmark.id}}</span>|<span>{{bookmark.category}}</span></a>
+                    </div>
+                    <hr/>
+                    
+                    <!--Creating-->
+                    <div ng-if="shouldShowCreating()">
+                        <button type="button" class="btn" ng-click="startCreating()">
+                            <span class="glyphicon glyphicon-plus"></span>
+                            Create Bookmark
+                        </button>
+                        <div ng-if="isCreating">
+                            Create a bookmark!
+                            <h1>{{b}}</h1>
+                            <button title="" type="button" class="btn btn-default btn-lg pull-right" ng-click="cancelCreating()">Cancel</button>
+                        </div>
+                    </div>
+                    
+                    <!--Editing--> 
+                    
+                    <div ng-if="ShouldShowEditing()">
+                        Edit a bookmark!
+                        <button title="" type="button" class="btn btn-default btn-lg pull-right" ng-click="cancelEditing()">Cancel</button>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="vendor/angularjs/angular.js"></script>
+        <script src="app/eggly-app.simpleStartes.js"></script>
+    </body>
+</html>

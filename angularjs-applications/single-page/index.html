@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">        
+        <meta name="author" content="muni">
+        <meta name="description" content="Single Page Application Using AngularJS">
+
+        <!-- Mobile Stuff -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="msapplication-tap-highlight" content="no">
+
+        <!-- Chrome on Android -->
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="application-name" content="Single Page Application Using AngularJS">
+        <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon.png">
+
+        <!-- Safari on iOS -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Single Page Application Using AngularJS">
+        <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+        <!-- Windows 8 -->
+        <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon.png">
+        <meta name="msapplication-TileColor" content="#FFFFFF">
+
+
+        <meta name="theme-color" content="#000000">
+
+        <link rel="shortcut icon" href="favicon.ico">
+
+        <title>Single Page Application Using AngularJS</title>
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+
+    <body data-ng-app="singlePageApp">  
+        <!-- Fixed navbar -->
+       
+        <nav class="navbar navbar-default navbar-fixed-top" ng-include="'partials/nav.html'"></nav>  
+        <!-- Insert your HTML here -->
+        <div class="container">
+            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                <div data-ng-view></div>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <img src="img/green.png" alt="" class="img img-responsive"/>
+            </div>
+        </div> <!-- /container -->
+        <script src="js/jquery-2.1.4.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-route.min.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>

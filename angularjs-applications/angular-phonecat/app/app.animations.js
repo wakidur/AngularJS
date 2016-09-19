@@ -1,5 +1,4 @@
-(function(angular){
-  'use strict';
+'use strict';
 
 angular.
   module('phonecatApp').
@@ -41,6 +40,4 @@ angular.
         if (wasCanceled) element.stop();
       };
     }
-  });  
-})(window.angular);
-
+  });

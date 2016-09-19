@@ -1,0 +1,26 @@
+<h1>User : Wakidur</h1>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Action</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="user in users.users">
+        <td>{{user.firstName}}</td>
+        <td>{{user.firstName}}</td>
+        <td>{{user.email}}</td>
+        <td>
+            <button type="button" class="btn btn-link" ng-click="users.removeUser(user.id)">Remove</button>
+            <a class="btn btn-link" href="#/users/{{user.id}}">View</a>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>

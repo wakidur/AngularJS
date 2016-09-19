@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Registration</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,100,700,900' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="assets/bootstrap/dist/css/bootstrap.css">
+  <!--<link rel="stylesheet" href="css/style.css">-->
+
+  
+  
+  <script src="assets/jquery/jquery.js"></script>
+  <script src="assets/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="assets/angular/angular.js"></script>
+  <script src="assets/angular/angular-route.js"></script>
+  <script src="assets/angular/angular-animate.js"></script>
+  
+  
+  <!--Module-->
+  <script src="js/module/imageupload.js"></script>
+  
+  <script src="js/app.js"></script>
+  
+  <!--directive-->
+  <script src="js/directive/starrating.js"></script>
+  <script src="js/directive/imageupload.js"></script>
+  
+  <script src="js/controllers/registration.js"></script>
+  <script src="js/controllers/success.js"></script>
+  <script src="js/controllers/deshboare.js"></script>
+
+</head>
+<body>
+<header>
+  <div class="cf" ng-include="'views/nav.html'"></div>
+</header>
+<div class="container">
+    <div class="row" style="margin-top: 80px;">
+        <div class="col-xs-12" >
+            <main class="cf" ng-view></main>
+        </div>
+    </div>
+</div>
+</body>
+</html>

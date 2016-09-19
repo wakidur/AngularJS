@@ -1,0 +1,183 @@
+<section class="card register">
+    <div class="alert alert-danger none"><p></p></div>
+    <div class="alert alert-success none"><p></p></div>
+    <form name="myform" class="form-horizontal"
+          ng-submit="signin()" enctype="multipart/form-data"
+          novalidate>
+        <div class="col-xs-12">
+            <div class="textintro">
+                <h1>Register</h1>
+                <p>To access site features</p>
+                <p class="message" ng-show="message">{{ message}}</p>
+                <p class="message" ng-show="username">{{ username}}</p>
+            </div>
+        </div>
+
+        <div class="col-xs-8">
+            <div class="form-group">
+                <label for="company_name">Company Name</label>
+                <input class="form-control" id="company_name"  type="text" name="company_name" placeholder="Company name"
+                       ng-model="user.company_name" ng-required="true">
+                <p class="error validationerror"
+                   ng-show="myform.company_name.$invalid && myform.company_name.$touched">
+                    First name required</p>
+            </div>
+            <div class="form-group">
+                <label for="email">Company Email</label>
+                <input 
+                       class="form-control" 
+                       id="email"  
+                       type="email"
+                       name="email" 
+                       placeholder="Enter company email address"
+                       ng-model="user.email" ng-required="true">
+                <p class="error validationerror"
+                   ng-show="myform.email.$invalid && myform.email.$touched">
+                    Must be a valid email</p>
+            </div>
+            <div class="form-group">
+                <label for="phone_number">Company Phone Number</label>
+                <input class="form-control" 
+                       type="tel" 
+                       id="phone_number" 
+                       name="phone_number" 
+                       placeholder="Enter company phone number"
+                       ng-model="user.phone_number" ng-required="true">
+                <p class="error validationerror"
+                   ng-show="myform.phone_number.$invalid && myform.phone_number.$touched">
+                    Company phone number required</p>
+            </div>
+            
+            <div class="form-group">
+                <label for="address">Company Address</label>
+                <textarea class="form-control" 
+                          id="address" 
+                          type="text" 
+                          name="addrss" 
+                          rows="3"
+                          placeholder="Enter company address"
+                          ng-model="user.addrss" ng-required="true"></textarea>
+                <p class="error validationerror"
+                   ng-show="myform.addrss.$invalid && myform.addrss.$touched">
+                    Company address is required</p>
+
+            </div> 
+            <div class="form-group">
+                <label for="category">Company category</label>
+                <select id="category" name="category" class="form-control" ng-required="true" ng-model="user.category">
+                    <option value="0">Company type</option>
+                    <option value="1">Ab</option>
+                    <option value="2">Cd</option>
+                    <option value="3">Ef</option>
+                    <option value="4">Gh</option>
+                  </select>
+                
+                <p class="error validationerror"
+                   ng-show="myform.category.$invalid && myform.category.$touched">
+                    Select company category</p>
+
+            </div> 
+            
+            <div class="form-group">
+                <label for="service">Company service</label>
+                <label class="checkbox-inline">
+                    <input ng-model="user.service" name="service" type="checkbox" id="inlineCheckbox1" value="option1"> Web 
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2"> IT
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3"> Corporate
+                </label>
+            </div> 
+            <div class="form-group">
+                <label for="service_area_zip">Service area zip code/postal code</label>
+                <input class="form-control"  
+                       type="text" 
+                       name="service_area_zip" 
+                       id="service_area_zip" 
+                       placeholder="Enter zip code/postal code"
+                       ng-model="user.service_area_zip" 
+                       ng-required="true">
+                <p class="error validationerror"
+                   ng-show="myform.service_area_zip.$invalid && myform.service_area_zip.$touched">
+                    Enter service area zip code/postal code</p>
+
+            </div> 
+            
+            <div class="form-group">
+                <label for="working_hours">Working hours</label>
+                <input class="form-control"  
+                       type="time" 
+                       name="working_hours" 
+                       id="working_hours_start" 
+                       placeholder="Enter working hours"
+                       ng-model="user.working_hours" 
+                       ng-required="true">
+                <p class="error validationerror"
+                   ng-show="myform.working_hours.$invalid && myform.working_hours.$touched">
+                    Enter Working hours Start</p>
+
+            </div> 
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input class="form-control"  
+                       type="password" 
+                       id="password" 
+                       name="password" 
+                       placeholder="Enter password"
+                       ng-model="user.password" 
+                       ng-required="true">
+                <p class="error validationerror"
+                   ng-show="myform.password.$invalid && myform.email.$touched">
+                    Password is required</p>
+
+            </div> 
+            <div class="form-group">
+                <label for="category">Confirm password</label>
+                <input class="form-control" 
+                       type="password" 
+                       name="password" 
+                       placeholder="Enter confirm password"
+                       ng-model="user.password" 
+                       ng-required="true">
+                <p class="error validationerror"
+                   ng-show="myform.password.$invalid && myform.email.$touched">
+                    Password is required</p>
+
+            </div> 
+        </div>
+        <div class="col-xs-4">
+            <div class="">
+                <label for="company_logo">Company Logo</label>
+
+                <input id="icompany_logo" 
+                       name="compnay_logo"
+                       type="file" 
+		       ng-model="user.compnay_logo"
+                       accept="image/*" 
+                       data-image="image" 
+                       data-resize-max-height="300"
+                       data-resize-max-width="250"
+                       data-resize-quality="0.7" />
+
+                <p>Original</p>
+               <img ng-show="image" ng-src="{{image.url}}" type="{{image.file.type}}"/>
+                <p>Resized</p>
+                <img ng-show="image"  ng-src="{{image.resized.dataURL}}"/>
+                <button type="submit" ng-click="single(image.resized)" ng-show="image" ng-disabled="contactform.$invalid">Add</button>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <button type="submit" class="btn btn-primary"
+                    ng-disabled="myform.$invalid">Register</button>
+           
+        </div>
+
+
+
+
+
+    </form>
+</section>

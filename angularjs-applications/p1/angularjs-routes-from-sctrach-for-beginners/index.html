@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="Angello" ng-controller="MainCtrl">
+    <head>
+        <title>{{hello}}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+        <script src="../libs/angular.js"></script>
+        <script src="../libs/angular-route.js"></script>
+        <script src="app/controllers/UserController.js"></script>
+        <script src="app/app.js"></script>
+        
+        <style>
+            .hello{
+                margin-top: 80px;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="">
+        <div class="navbar navbar-fixed-top navbar-default">
+            <div class="container">
+            <div class="navbar-header">
+                <a class="logo navbar-brand" href="#/">
+                    <img width="35" height="35" src="assets/img/angello.png">
+                </a>
+            </div>
+            <div class="btn-group pull-right">
+                <a class="btn btn-danger" href="#/">
+                    <span class="glyphicon glyphicon-home"></span>
+                </a>
+                <a class="btn btn-danger" href="#/users">
+                    <span class="glyphicon glyphicon-user"></span>
+                </a>
+                <a class="btn btn-danger" href="#/dashboard">
+                    <span class="glyphicon glyphicon-signal"></span>
+                </a>
+                <button class="btn btn-default" ng-click="main.logout()">
+                    <span class="glyphicon glyphicon-log-out"></span>
+                </button>
+            </div>
+        </div>
+        </div>
+            </header>
+        <div class="container">
+            <div class="row">
+                <h1 class="hello">{{hello}}</h1>
+                <div ng-view></div>
+            </div>
+        </div>
+        <!--ng view section-->
+        
+    </body>
+</html>
