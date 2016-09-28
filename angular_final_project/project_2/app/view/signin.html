@@ -1,0 +1,45 @@
+<form class="form-signin">
+    <h2 class="form-signin-heading">{{signin}}</h2>
+    <div class="form-group">
+    <label for="email">Email address</label>
+    <input 
+        type="email" 
+        id="email" 
+        class="form-control" 
+        placeholder="Email address" 
+        ng-model="email" 
+        required 
+        autofocus>
+    
+    <p ng-show="email">{{email}}</p>
+    </div>
+    <div class="form-group">
+    <label for="password">Password</label>
+    <input 
+        type="password" 
+        name="password" 
+        id="password" 
+        class="form-control" 
+        placeholder="Password"
+        ng-model="password" 
+        required>
+    <p ng-show="password">{{password}}</p>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    
+    <button class="btn btn-lg  btn-info btn-block" ng-click="submit()">Sign in</button>
+    
+    <br>
+    
+    <a href="#"> Forgot your password?</a>
+    
+    <hr>
+    
+    <p class="text-center">New to this Company?</p>
+    <a href="#/create_account" class="btn btn-lg btn-default btn-block">create your account</a>
+        
+</form>

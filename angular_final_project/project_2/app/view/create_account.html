@@ -1,0 +1,57 @@
+<form class="form-signin" ng-submit="submitForm()">
+    <h2 class="form-signin-heading">{{createAccount}}</h2>
+    <p class="err" ng-repeat="error in errors"> {{ error}} </p>
+    <p class="info" ng-repeat="msg in msgs"> {{ msg}} </p>
+    <div class="form-group">
+        <label for="user">Your name</label>
+        <input 
+            type="text" 
+            id="user" 
+            name="user"
+            ng-model="user" 
+            class="form-control" 
+            placeholder="Your full name" 
+            required 
+            autofocus>
+
+        <p ng-show="user">{{user}}</p>
+        <span ng-show="errorName">{{errorName}}</span>
+    </div>
+    <div class="form-group">
+        <label for="email">Email address</label>
+        <input 
+            type="email" 
+            id="email" 
+            name="email"
+            ng-model="email"
+            class="form-control" 
+            placeholder="Email address" 
+            required 
+            autofocus>
+
+        <p ng-show="email">{{email}}</p>
+        <span ng-show="errorUserName">{{errorUserName}}</span>
+    </div>
+    
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+            type="password" 
+            name="password" 
+            id="password" 
+            ng-model="password"
+            class="form-control" 
+            placeholder="Password"
+            required>
+        <p ng-show="password">{{password}}</p>
+        <span ng-show="errorEmail">{{errorEmail}}</span>
+        
+    </div>
+        <button ng-click='SignUp();' class="btn btn-lg  btn-info btn-block">Create account</button>
+    <br>
+    <hr>
+    
+    <p style="float: left">Already have an Account?</p>
+    <a href="#/signin">Sign in</a>
+        
+</form>

@@ -1,0 +1,26 @@
+<section class="search_section">
+    <div class="jumbotron text-center">
+        <h1>Full-Text-Search</h1>
+        <input  ng-model="query" class="form-control" placeholder="Search your product">
+    <p ng-show="name">{{query}}</p>
+     </div>  
+</section>
+<section class="container_section">
+    <div class="row">
+        <div class="col-xs-2" ng-repeat="gallery in galleries | filter:{name: query}">
+            <a href="#/{{gallery.id}}" >
+                <div class="thumbnail">
+                    <img src="{{gallery.imageUrl}}" alt="{{gallery.name}}">
+                    <div class="caption">
+                        <h5 class="ellipsis">{{gallery.name}}</h5>
+                        <p>{{gallery.price | currency}}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+
