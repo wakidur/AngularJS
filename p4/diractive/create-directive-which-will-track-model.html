@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../node_modules/angular/angular.js"></script>
+    </head>
+    <body>
+        <div ng-app="appRoot">
+            <div style="margin-left:40px;" ng-controller="MainController">
+
+                <br />
+                <select ng-change="modelChange()" track-change="" ng-model="Product.Selected" 
+                        ng-options="prod.name for prod in sourceList" >
+                </select>  
+                <span style="color:orange">{{Product.Selected}}</span>
+
+            </div>
+
+
+        </div>
+<script>
+var appRoot = angular.module('appRoot', []);
+
+appRoot.controller('MainController', function ($scope) {
+    'use strict';
+    $scope.Product = {};
+
+    $scope.sourceList = [
+        {"id": 1, "name": "Apple"},
+        {"id": 2, "name": "Orange"},
+        {"id": 3, "name": "Banana"},
+        {"id": 4, "name": "Papaya"},
+        {"id": 5, "name": "Jackfruit"}];
+
+    $scope.Product.Selected = $scope.sourceList[0];
+
+});
+
+appRoot.directive('trackChange',function(){
+    return{
+        restrict:'A',
+        require:'ngModel',
+        link:function(scope,element,attrs,ngModel){
+
+            var historyObject = {NewValue:undefined,OldValue:undefined};
+            var OldValue = {};
+            var NewValue = {};
+
+            ngModel.$formatters.push(function(value){
+                if(historyObject.NewValue!=undefined)
+                    return historyObject.NewValue;
+                if(value!=undefined){
+                    historyObject.NewValue = value;
+                }
+                return value;
+            });
+
+            ngModel.$parsers.push(function (value) {
+
+                            historyObject.OldValue = historyObject.NewValue;
+                            ;
+                            historyObject.NewValue = value;
+                            ngModel.$setViewValue(historyObject.NewValue);
+                            ngModel.$render();
+                            ngModel.$setValidity('is_valid', true);
+                            return historyObject;
+                        });
+
+                    }
+                }
+            })
+
+
+           
+
+
+
+        </script>
+    </body>
+</html>

@@ -1,5 +1,6 @@
 var myApp = angular.module('myApp', ['ngRoute','imageupload']);
 myApp.config(['$routeProvider', function($routeProvider) {
+        
   $routeProvider.
     when('/login', {
       templateUrl: 'views/login.html',

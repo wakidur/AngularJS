@@ -1,89 +1,31 @@
 <?php
-include 'DB.php';
-$db = new DB();
-$tblName = 'companies_info';
-if(isset($_REQUEST['type']) && !empty($_REQUEST['type'])){
-    $type = $_REQUEST['type'];
-    switch($type){
-        case "view":
-            $records = $db->getRows($tblName);
-            if($records){
-                $data['records'] = $db->getRows($tblName);
-                $data['status'] = 'OK';
-            }else{
-                $data['records'] = array();
-                $data['status'] = 'ERR';
-            }
-            echo json_encode($data);
-            break;
-        case "add":
-            if(!empty($_POST['data'])){
-                $userData = array(
-                    'company_name' => $_POST['data']['company_name'],
-                    'email' => $_POST['data']['email'],
-                    'phone_number' => $_POST['data']['phone_number'],
-                    'addrss' => $_POST['data']['addrss'],
-                    'service' => $_POST['data']['service'],
-                    'category' => $_POST['data']['category'],
-                    'service_area_zip' => $_POST['data']['service_area_zip'],
-                    'password' => $_POST['data']['password'],
-                    'image' => $_POST['data']['image']
-                );
-                $insert = $db->insert($tblName,$userData);
-                if($insert){
-                    $data['data'] = $insert;
-                    $data['status'] = 'OK';
-                    $data['msg'] = 'User data has been added successfully.';
-                }else{
-                    $data['status'] = 'ERR';
-                    $data['msg'] = 'Some problem occurred, please try again.';
-                }
-            }else{
-                $data['status'] = 'ERR';
-                $data['msg'] = 'Some problem occurred, please try again.';
-            }
-            echo json_encode($data);
-            break;
-        case "edit":
-            if(!empty($_POST['data'])){
-                $userData = array(
-                    'name' => $_POST['data']['name'],
-                    'email' => $_POST['data']['email'],
-                    'phone' => $_POST['data']['phone']
-                );
-                $condition = array('id' => $_POST['data']['id']);
-                $update = $db->update($tblName,$userData,$condition);
-                if($update){
-                    $data['status'] = 'OK';
-                    $data['msg'] = 'User data has been updated successfully.';
-                }else{
-                    $data['status'] = 'ERR';
-                    $data['msg'] = 'Some problem occurred, please try again.';
-                }
-            }else{
-                $data['status'] = 'ERR';
-                $data['msg'] = 'Some problem occurred, please try again.';
-            }
-            echo json_encode($data);
-            break;
-        case "delete":
-            if(!empty($_POST['id'])){
-                $condition = array('id' => $_POST['id']);
-                $delete = $db->delete($tblName,$condition);
-                if($delete){
-                    $data['status'] = 'OK';
-                    $data['msg'] = 'User data has been deleted successfully.';
-                }else{
-                    $data['status'] = 'ERR';
-                    $data['msg'] = 'Some problem occurred, please try again.';
-                }
-            }else{
-                $data['status'] = 'ERR';
-                $data['msg'] = 'Some problem occurred, please try again.';
-            }
-            echo json_encode($data);
-            break;
-        default:
-            echo '{"status":"INVALID"}';
-    }
-}
+/**
+ * @filesource : submit.php
+ * @author : Shabeeb  <mail@shabeeb.com>
+ * @abstract : simple submission php form
+ * @package sample file 
+ * @copyright (c) 2014, Shabeeb
+ * 
+ * 
+ *  */
+ 
+$post_date = file_get_contents("php://input");
+$data = json_decode($post_date);
+ 
+ 
+//saving to database
+//save query
+print_r($data->formData);
+//now i am just printing the values
+//echo "company_name : ".$data->company_name."n";
+//echo "Email : ".$data->email."n";
+//echo "phone_number : ".$data->phone_number."n";
+//echo "address : ".$data->address."n";
+//echo "category : ".$data->category."n";
+//echo "servicee : ".$data->service."n";
+//echo "service_area_zip : ".$data->service_area_zip."n";
+//echo "working_hourse : ".$data->working_hours."n";
+//echo "password : ".$data->password."n";
+
+ 
+?>

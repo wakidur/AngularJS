@@ -36,6 +36,7 @@ class DB {
      * @param string name of the table
      * @param array select, where, order_by, limit and return_type conditions
      */
+    /*
     public function getRows($table,$conditions = array()){
         $sql = 'SELECT ';
         $sql .= array_key_exists("select",$conditions)?$conditions['select']:'*';
@@ -81,6 +82,8 @@ class DB {
         }
         return !empty($data)?$data:false;
     }
+    */
+    
     
     /*
      * Insert data into the database
@@ -125,6 +128,8 @@ class DB {
      * @param array the data for updating into the table
      * @param array where condition on updating data
      */
+    
+    /*
     public function update($table,$data,$conditions){
         if(!empty($data) && is_array($data)){
             $colvalSet = '';
@@ -157,12 +162,16 @@ class DB {
             return false;
         }
     }
+    */
+    
     
     /*
      * Delete data from the database
      * @param string name of the table
      * @param array where condition on deleting data
      */
+    
+    /*
     public function delete($table,$conditions){
         $whereSql = '';
         if(!empty($conditions)&& is_array($conditions)){
@@ -178,4 +187,6 @@ class DB {
         $delete = $this->db->exec($sql);
         return $delete?$delete:false;
     }
+    */
+    
 }
