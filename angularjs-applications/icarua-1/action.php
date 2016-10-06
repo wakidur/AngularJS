@@ -1,31 +1,39 @@
 <?php
-/**
- * @filesource : submit.php
- * @author : Shabeeb  <mail@shabeeb.com>
- * @abstract : simple submission php form
- * @package sample file 
- * @copyright (c) 2014, Shabeeb
- * 
- * 
- *  */
- 
+
+//to run PHP script on submit
+if (!empty($_POST['services'])) {
+// Loop to store and display values of individual checked checkbox.
+        foreach ($_POST['services'] as $selected) {
+            echo $selected . "</br>";
+        }
+    }
+
 $post_date = file_get_contents("php://input");
 $data = json_decode($post_date);
+/*Convert Object to array*/
+foreach($data as $weekcode => $weekname){
+$selectedweek[$weekcode] = $weekname; 
+};
+/*Pass the selected week array back to angularjs for confirmation*/
+print_r($selectedweek);
  
  
 //saving to database
 //save query
-print_r($data->formData);
-//now i am just printing the values
-//echo "company_name : ".$data->company_name."n";
-//echo "Email : ".$data->email."n";
-//echo "phone_number : ".$data->phone_number."n";
-//echo "address : ".$data->address."n";
-//echo "category : ".$data->category."n";
-//echo "servicee : ".$data->service."n";
-//echo "service_area_zip : ".$data->service_area_zip."n";
-//echo "working_hourse : ".$data->working_hours."n";
-//echo "password : ".$data->password."n";
-
  
+//now i am just printing the values
+echo "company_name : ".$data->company_name. "\n";
+echo "email : ".$data->email."\n";
+echo "phone_number : ".$data->phone_number."\n";
+echo "address : ".$data->address."\n";
+echo "phone_number : ".$data->phone_number."\n";
+//echo "services : ".$txtWeek."\n";
+echo "service_area_zip : ".$data->service_area_zip."\n";
+echo "working_hours : ".$data->working_hours."\n";
+echo "password : ".$data->password."\n";
+
+
+
+
+
 ?>

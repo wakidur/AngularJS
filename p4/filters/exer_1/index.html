@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app="myApp" >
+    <head>
+        <title>Angular Filters</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../../node_modules/angular/angular.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div ng-controller="namesCtrl"> 
+            <!--step-1-->
+            <table border="1" width="100%">
+                <tr>
+                    <th ng-click="orderByMe('name')">Name</th>
+                    <th ng-click="orderByMe('country')">Country</th>
+                </tr>
+                <tr ng-repeat="x in names | orderBy:myOrderBy">
+                    <td>{{x.name}}</td>
+                    <td>{{x.country}}</td>
+                </tr>
+            </table>
+            <!--step - 1 end-->
+            <br>
+            <hr>
+            <br>
+            
+            <!--step - 2--> 
+            <ul ng-controller="namesCtrlCustom">
+                <li ng-repeat="x in names">
+                    {{x | myFormat }}
+                </li>
+            </ul>
+            <!--step end-->
+            
+            <!--step - 3-->
+            
+            <br>
+            <hr>
+            <br>
+            
+            <div ng-controller="FilterController as ctrl">
+                <div>
+                    All entries:
+                    <span ng-repeat="entry in ctrl.array">{{entry.name}} </span>
+                </div>
+                <div>
+                    Entries that contain an "a":
+                    <span ng-repeat="entry in ctrl.filteredArray">{{entry.name}} </span>
+                </div>
+            </div>
+        </div>
+        
+        <!--step - 4-->
+            
+            <br>
+            <hr>
+            <br>
+            <div ng-controller="MyController">
+                <input ng-model="greeting" type="text"><br>
+                No filter: {{greeting}}<br>
+                Reverse: {{greeting|reverse}}<br>
+                Reverse + uppercase: {{greeting|reverse:true}}<br>
+<!--                Reverse, filtered in controller: {{filteredGreeting}}<br>-->
+            </div>
+
+
+    </body>
+</html>

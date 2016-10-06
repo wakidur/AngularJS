@@ -1,15 +1,12 @@
 <section class="card register">
     <div class="alert alert-danger none"><p></p></div>
     <div class="alert alert-success none"><p></p></div>
-    <form name="myform" class="form-horizontal"
-           enctype="multipart/form-data"
-          novalidate method="post">
+    
+    <form name="myform" class="form-horizontal" novalidate>
         <div class="col-xs-12">
             <div class="textintro">
                 <h1>Register</h1>
                 <p>To access site features</p>
-                <p class="message" ng-show="message">{{ message}}</p>
-                <p class="message" ng-show="username">{{ username}}</p>
             </div>
         </div>
 
@@ -62,20 +59,23 @@
                 <textarea 
                           class="form-control" 
                           id="address" 
-                          type="text" 
                           name="address" 
                           rows="3"
                           placeholder="Enter company address"
                           ng-model="address" 
-                          ng-required="true">
+                          ng-required="true"
+                          required="required"
+                          cols="5" 
+                          rows="3">
                               
                 </textarea>
+                
                 <p class="error validationerror"
                    ng-show="myform.addrss.$invalid && myform.addrss.$touched">
                     Company address is required</p>
 
             </div> 
-            <div class="form-group">
+<!--            <div class="form-group">
                 <label for="category">Company category</label>
                 <select 
                     id="category" 
@@ -94,9 +94,9 @@
                    ng-show="myform.category.$invalid && myform.category.$touched">
                     Select company category</p>
 
-            </div> 
+            </div> -->
             
-            <div class="form-group" >
+<!--            <div class="form-group" >
                 <label for="service">Company service</label>
                 <label class="checkbox-inline">
                     <input  
@@ -123,7 +123,28 @@
                         id="inlineCheckbox3" 
                         value="option3"> Corporate
                 </label>
-            </div> 
+            </div> -->
+
+                <!-- Services Offered -->                
+            
+            <div class="form-group">
+                
+                <label class="checkbox-inline">
+                    <input type="checkbox" name="services[]" id="investments" ng-model="plannerData.services.investments" value="investments"> Investments
+                </label>
+                <label class="checkbox-inline">
+                <input type="checkbox" name="services[]" id="ltinsurance" ng-model="plannerData.services.ltinsurance" value="ltinsurance"> Long-Term Insurance
+                </label>
+                <label class="checkbox-inline">
+                <input type="checkbox" name="services[]" id="stinsurance" ng-model="plannerData.services.stinsurance" value="stinsurance"> Short-Term Insurance
+                </label>
+                <label class="checkbox-inline">
+                <input type="checkbox" name="services[]" id="taxplanning" ng-model="plannerData.services.taxplanning" value="taxplanning"> Tax Planning
+                </label>
+                <label class="checkbox-inline">
+                <input type="checkbox" name="services[]" id="estateplanning" ng-model="plannerData.services.estateplanning" value="estateplanning"> Estate Planning
+                </label>
+            </div>      
             
             <div class="form-group">
                 <label for="service_area_zip">Service area zip code/postal code</label>
@@ -147,7 +168,7 @@
                        class="form-control"  
                        type="time" 
                        name="working_hours" 
-                       id="working_hours_start" 
+                       id="working_hours" 
                        placeholder="Enter working hours"
                        ng-model="working_hours" 
                        ng-required="true">
@@ -209,18 +230,22 @@
             </div>
         </div>-->
         <div class="col-xs-12">
-            <button ng-click="signin(myform.$valid)" class="btn btn-primary"
-                    ng-disabled="myform.$invalid">Register</button>
+            <button ng-click="signin(myform.$valid);save(plannerData.services)" class="btn btn-primary"
+                    ng-disabled="myform.$invalid" type="sumbit" name="submit">Register</button>
            
         </div>
 
 
-{{formData}}
+
 
 
     </form>
     
-    <pre ng-model="result">
+    <p>{{status}}</p>
+    <p>{{data}}</p>
+    <p>{{result}}</p>
+    
+    <pre ng-show="result" ng-model="result">
                 {{result}}
     </pre>
 </section>

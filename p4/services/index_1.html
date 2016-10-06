@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" ng-app="myServiceModule">
+    <head>
+        <meta charset="UTF-8">
+        <title>Example- service</title>
+        <script src="../node_modules/angular/angular.min.js"></script>
+    </head>
+    <body>
+        <!--step - 1-->
+        
+        <div ng-controller="LocationController">
+            <h1>The url on the page is </h1>
+            <h2>$location service  </h2>
+            <p>{{myUrl}}</p>
+        </div>
+        
+        <br>
+        <hr>
+        <br>
+        <!--step - 2-->
+        
+        <div ng-controller="httpController">
+            <h1>The $http service requests a page on the server,</h1>
+            <p>{{myData}}</p>
+        </div>
+        
+         <br>
+        <hr>
+        <br>
+        <!--step - 3-->
+        
+        <div ng-controller="timeoutController">
+            <h1>The $timeout service requests a page on the server,</h1>
+            <p>{{myHeader}}</p>
+        </div>
+         <br>
+        <hr>
+        <br>
+        <!--step - 4-->
+        
+        <div ng-controller="intervalController">
+            <h1>The $timeout service requests a page on the server,</h1>
+            <p>{{theTime}}</p>
+        </div>
+                
+        
+        
+        
+        <script>
+            
+            var myApp = angular.module('myServiceModule',[]);
+            /*step - 1*/
+                myApp.controller('LocationController',['$scope', '$location', 
+                function($scope, $location){
+                    $scope.myUrl = $location.absUrl();
+                    console.log("my main page url : " +  $scope.myUrl + "\n");
+                }]);
+            
+            /*step - 2*/ 
+                myApp.controller('httpController',['$scope','$http',
+                    function($scope,$http){
+                        $http.get('info.txt').then(function(data){
+                            $scope.myData = data.data;
+                            console.log("httpController : " + "\n");
+                        });
+                        
+                        
+                }]);
+            /* step - 3*/
+                myApp.controller('timeoutController' ,['$scope','$timeout',
+                    function($scope, $timeout){
+                       $scope.myHeader = "Initial value of the Hello world ";
+                       console.log("timeoutController : " +  $scope.myHeader + "\n");
+                       $timeout( function(){
+                           $scope.myHeader = "How are your today?";
+                       },2000);
+                }]);
+            
+            /*step - 4*/
+            
+                myApp.controller('intervalController',['$scope','$interval',function($scope,$interval){
+                    $scope.theTime = new Date().toLocaleTimeString();
+                    $interval(function () {
+                        $scope.theTime = new Date().toLocaleTimeString();
+                    }, 1000);
+                }]);
+            
+            
+            
+        </script>
+    </body>
+</html>
