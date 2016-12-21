@@ -20,6 +20,17 @@ angular.module('sampleApp').controller('userInfo' , ['$scope', function($scope){
 }]);
 */
 angular.module('sampleApp').controller('userInfo' , ['$scope', function($scope){
+        
+        var playersRef = firebase.database().ref("userbook/");
+
+            playersRef.on("child_added", function(data, prevChildKey) {
+               var newPlayer = data.val();
+               console.log("username: " + newPlayer.username);
+               console.log("useremail: " + newPlayer.useremail);
+               console.log("usermessage: " + newPlayer.usermessage);
+               console.log("useraddress: " + newPlayer.useraddress);
+               console.log("useraddress: " + prevChildKey);
+            });
         $scope.albums = [
         {
             name: 'Red'
@@ -30,7 +41,10 @@ angular.module('sampleApp').controller('userInfo' , ['$scope', function($scope){
         {
             name: 'Yellow'
         }];
-        $scope.writeUserData = function(userId, name, email, message, addrss, albumNameArray){ 
+        $scope.writeUserData = function(userId, name, email, message, addrss, albumNameArray){
+            
+            
+            
             var name = $scope.name;
             var email = $scope.email;
             var message = $scope.message;
