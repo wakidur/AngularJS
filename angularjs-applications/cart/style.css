@@ -9,6 +9,7 @@ button.cancel:hover {
 
 .product-list {
 	    margin: -1px -48px 170px -50px;
+	    margin: auto;
 }
 
 .product-list figure {

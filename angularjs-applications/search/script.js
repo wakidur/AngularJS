@@ -1,6 +1,7 @@
 // Define a new module for our app
     var app = angular.module('instantSearch', []);
-    app.controller('InstantSearchController', ['$scope','searchforFilter', function( $scope, searchforFilter ){
+    app.controller('InstantSearchController', ['$scope','searchforFilter', 
+        function( $scope, searchforFilter ){
 	// The data model. These items would normally be requested via AJAX,
 	// but are hardcoded here for simplicity. See the next example for
 	// tips on using AJAX.
@@ -50,6 +51,7 @@
     // argument that may be passed with a colon (searchFor:searchString)
     return function(arr, searchString){
         if(!searchString){
+            console.log("there is now search value");
             return arr;
         }
         var result = [];
@@ -57,7 +59,7 @@
             // Using the forEach helper method to loop through the array
             angular.forEach(arr, function(item){
                 if(item.title.toLowerCase().indexOf(searchString) !== -1){
-                    result.push(item);
+                    result.push(item); 
                 }
             });
         return result;

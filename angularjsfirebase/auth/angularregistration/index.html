@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en" ng-app="sampleApp">
+    <head>
+        <meta charset="UTF-8">
+        <title>Angular Registration</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,100,700,900' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/bootstrap.css">
+
+        <script src="js/lib/angular/angular.min.js"></script>
+        <script src="js/lib/angular/angular-route.min.js"></script>
+        <script src="js/lib/angular/angular-animate.min.js"></script>
+
+        <!-- Firebase -->
+        <!--    <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>-->
+        <!-- AngularFire -->
+        <!--    <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>-->
+
+
+
+
+        <!-- Firebase -->
+        <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>  
+        <!-- AngularFire -->
+        <script src="https://cdn.firebase.com/libs/angularfire/2.1.0/angularfire.min.js"></script>
+
+
+ <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDvbEnpxzP6TuRAo6pkzkWF6oXYV0i6NWk",
+        authDomain: "fir-auth-37950.firebaseapp.com",
+        databaseURL: "https://fir-auth-37950.firebaseio.com",
+        storageBucket: "fir-auth-37950.appspot.com",
+        messagingSenderId: "829410255727"
+    };
+    firebase.initializeApp(config);
+    // Get the Auth service for the default app
+    ///var defaultAuth = firebase.auth();
+    var app = angular.module("sampleApp", ["firebase"]);
+
+    // let's create a re-usable factory that generates the $firebaseAuth instance
+    app.factory("Auth", ["$firebaseAuth",
+        function ($firebaseAuth) {
+            return $firebaseAuth();
+        }
+    ]);
+
+    // and use it in our controller
+    app.controller("SampleCtrl", ["$scope", "Auth",
+        function ($scope, Auth) {
+            $scope.createUser = function () {
+                $scope.message = null;
+                $scope.error = null;
+                // Create a new user
+                firebase.auth().createUserWithEmailAndPassword($scope.email, $scope.password)
+                    .then(function () {
+                           $scope.message = "New user hes been created : ";
+                        })
+                    .catch(function(error) {
+                        // Handle Errors here.
+                            var errorCode = error.code;
+                            var errorMessage = error.message;
+                            if (errorCode == 'auth/weak-password') {
+                              alert('The password is too weak.');
+                            } else {
+                              alert(errorMessage);
+                            }
+                            console.log(error);
+                    });
+            };
+            $scope.signIn = function () {
+                console.log($scope.email + " " + $scope.password);
+                firebase.auth().signInWithEmailAndPassword($scope.email, $scope.password)
+                    .then(function(firebaseUser) {
+                        $scope.message = "User created with uid: " + firebaseUser.uid;
+                    }).catch(function (error) {
+                    // Handle Errors here.
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                    if (errorCode === 'auth/wrong-password') {
+                        alert('Wrong password.');
+                    } else {
+                        alert(errorMessage);
+                    }
+                    console.log(error);
+                });
+            };
+            $scope.deleteUser = function () {
+                $scope.message = null;
+                $scope.error = null;
+
+                // Delete the currently signed-in user
+                Auth.$deleteUser().then(function () {
+                    $scope.message = "User deleted";
+                }).catch(function (error) {
+                    $scope.error = error;
+                });
+            };
+        }
+    ]);
+</script>
+</head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <form class=""> 
+                        <div  ng-controller="SampleCtrl">
+                            <div class="form-group">
+                                Email: <input type="text" class="form-control" ng-model="email">
+                            </div>
+                            <div class="form-group">
+                                Password: <input class="form-control" type="password" ng-model="password">
+                            </div>
+                            <button class="btn btn-primary" ng-click="signIn()">Sign In Anonymously</button>
+
+
+                            <br><br>
+
+                            <button class="btn btn-success" ng-click="createUser()">Create User</button>
+
+                            <br><br>
+
+                            <button ng-click="deleteUser()">Delete User</button>
+                            <p ng-if="firebaseUser">Signed in user: <strong>{{ message}}</strong></p>
+                            <p ng-if="message">Message: <strong>{{ message}}</strong></p>
+                            <p ng-if="error">Error: <strong>{{ error}}</strong></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

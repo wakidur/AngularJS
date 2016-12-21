@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Angular Firebase Write</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <link rel="stylesheet" href="css/bootstrap.css">
+
+        <script src="js/lib/angular/angular.min.js"></script>
+        <!-- Fire base -->
+        <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>  
+        <!-- Angular Fire -->
+        <script src="https://cdn.firebase.com/libs/angularfire/2.1.0/angularfire.min.js"></script>
+        <script src="js/module/writedata.js"></script>
+        <script src="js/controllers/writedata.js"></script>
+        
+        
+
+
+       
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div ng-app="sampleApp" ng-controller="userInfo">
+                        <!--
+                        <form class="form-forizental" novalidate>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <input class="form-control" type="text" name="name" ng-model="name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <input class="form-control" type="email" name="email"  ng-model="email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <input class="form-control" type="text" name="message"  ng-model="message">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <input class="form-control" type="text" name="addrss" ng-model="addrss">
+                                </div>
+                            </div>
+                            <button class="btn btn-primary" ng-click="writeUserData()">Data save</button>
+                        </form>
+                        -->
+                        <form class="form-horizontal" novalidate>
+                            <div class="form-group">
+                                <label for="name" class="col-sm-2 control-label">Name </label>
+                                <div class="col-sm-10">
+                                  <input class="form-control" id="name" type="text" name="name" ng-model="name">
+                                </div>
+                              </div>
+                            <div class="form-group">
+                                <label for="email" class="col-sm-2 control-label">Email</label>
+                                <div class="col-sm-10">
+                                  <input class="form-control" id="email" type="email" name="email"  ng-model="email">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="col-sm-2 control-label">Message</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="text" id="message" name="message"  ng-model="message">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="address" class="col-sm-2 control-label">Address</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="text" id="address" name="address" ng-model="address">
+                                </div>
+                            </div>
+<!--<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <div class="checkbox">
+          <label>
+              <input type="checkbox" name="examples" id="examples" ng-model="examples" value="examples"> Examples
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="standard" id="standard" ng-model="standard" value="standard"> Standard
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="supported" id="supported" ng-model="supported" value="supported"> supported
+          </label>
+        </div>
+    </div>
+</div>-->
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <div class="checkbox" ng-repeat="album in albums">
+          <label>
+              <input type="checkbox" ng-model="album.selected" value={{album.name}} /> {{album.name}}
+          </label>
+        </div>
+    </div>
+</div>
+                            <div class="form-group">
+                                <div class="col-sm-10 col-sm-offset-2">
+                                    <button class="btn btn-primary" ng-click="writeUserData()">Data save</button>
+                                </div>
+                            </div>
+                        </form>
+                        
+                        
+                        
+                        
+                        <p ng-if="examples">{{examples}}</p>
+                        <p ng-if="standard">{{standard}}</p>
+                        <p ng-if="supported">{{supported}}</p>
+                        <p ng-if="albumNameArray">{{[albumNameArray[]]}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

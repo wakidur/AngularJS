@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <!--
+        <ul>
+            <li><a href="">item-1</a></li>
+            <li>
+                <a href="">item-2</a>
+                <ul>
+                    <li>
+                        <a href="">hello-1</a>
+                    </li>
+                    <li>
+                        <a href="">hello-2</a>
+                    </li>
+                    <li>
+                        <a href="">hello-3</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="">item-3</a></li>
+            <li><a href="">item-4</a></li>
+        </ul>
+        -->
+        
+        <ul class="hello-world">
+            <li><a href="">step-1</a></li>
+            <li><a href="">step-2</a></li>
+            <li><a class="clickme" id="clickme" href="">step-3</a></li>
+            <li><a href="">step-4</a></li>
+            <li><a href="">step-5</a></li>
+        </ul>
+        
+        <script src="js/jquery-1.9.1.min.js"></script>
+        <script>
+            $(function(){
+                var count = $('.hello-world li').size();
+                var lists = $('.hello-world li').find('a');
+                
+                console.log(count + "\n");
+                console.log(lists + "\n");
+                lists.each(function(index) {
+                    if ($(this).attr("id") == "clickme"){
+                        $(this).css("background-color", "yellow");
+                        console.log("Click me button get");
+                    }
+                    console.log($(this).attr("id"));
+//                    console.log(index.this.attr('id'));
+//                    console.log
+//                    
+                    //if()
+//                    console.log(index + ": "  + $(this).html());
+                    console.log(index + ": "  + $(this).text());
+                    
+                });
+                
+                
+                $('.hello-world a#clickme').on("click", function(event){
+                    event.preventDefault();
+                    console.log("hello workd ");
+                });
+//                function helloWorld(){
+//                    return (console.log(""))
+//                }
+//                list.each(function(i){
+//                    
+//                })
+//                console.log(list);
+//                
+//                
+//                steps.each(function(index){
+//                   console.log( index + ": " + $( this ).text() ); 
+//                });
+            });
+        </script>
+    </body>
+</html>
