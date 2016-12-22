@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" ng-app="readApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Firebase Write</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/lib/angular/angular.min.js"></script>
+    <!-- Fire base -->
+    <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>  
+    <!-- Angular Fire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.1.0/angularfire.min.js"></script>
+    <script src="js/module/readdata.js"></script>
+    <script src="js/controllers/readdata.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div  ng-controller="userInfo">
+                    <div ng-if="myData" ng-repeat="(key,value) in myData">
+                        
+                        <p>{{value.username}}</p>
+                        <p>{{value.useremail}}</p>
+                        <p>{{value.usermessage}}</p>
+                        <p>{{value.useraddress}}</p>
+                                                                   
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
