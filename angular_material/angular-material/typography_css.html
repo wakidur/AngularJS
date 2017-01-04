@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html ng-app="YourApp">
+<head>
+    <title>Auto complete </title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-aria/angular-aria.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
+    <script src="node_modules/angular-material/angular-material.js"></script>
+    <script>
+
+        // Include app dependency on ngMaterial
+/*
+        angular.module( 'YourApp', [ 'ngMaterial' ] )
+            .controller("YourController", YourController );
+        function YourController() {
+            var vm = this;
+                vm.title = "hello";
+        }
+        */
+        angular.module( 'YourApp', [ 'ngMaterial' ] )
+            .controller("YourController", function($scope){
+                $scope.title = "Hello world";
+            });
+        
+        
+        
+
+    </script>
+</head>
+    <body>
+
+    <!-- <div ng-controller="YourController as vm">
+        <h1>{{vm.title}}</h1>
+    </div>-->
+        
+    <div ng-controller="YourController">
+        <h1>{{title}}</h1>
+        
+        <h1 class="md-display-3">Headline</h1>
+        <h2 class="md-display-1">Headline</h2>
+        <h3 class="md-headline">Headline</h3>
+        <hr>
+        
+        <p class="md-body-2">Body copy with medium weight.</p>
+        <md-button class="md-raised md-cornered">Button</md-button>
+        <p class="md-body-1">
+            Regular body copy <small class="md-caption">with small text</small>.
+        </p>
+        <span class="md-caption">Caption</span>
+        <md-button ng-click="openBottomSheet()">
+      Open a Bottom Sheet!
+    </md-button>
+        <md-button>
+ <md-icon md-font-icon="icon-home" ng-style="{color: 'green', 'font-size':'36px', height:'36px'}">
+ </md-icon>
+</md-button>
+        
+        <section layout="row" layout-align="center center">
+  <md-button class="groupX left">Apple</md-button>
+  <md-button class="groupX middle">Samsung</md-button>
+  <md-button class="groupX middle">Sony</md-button>
+  <md-button class="groupX right">B&amp;O</md-button>
+</section>
+        
+    </div>
+
+    
+
+</body>
+</html>

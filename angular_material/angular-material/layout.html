@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Auto complete </title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
+</head>
+    <body ng-app="YourApp">
+
+    <div ng-controller="YourController as vm">
+<div layout="column" class="zero">
+
+            <div flex="33" flex-md="{{ vm.box1Width }}" class="one">fdfd {{vm.magga}}</div>
+            <div flex="33" layout="{{ vm.direction }}" layout-md="row" class="two">
+
+              <div flex="20" flex-md="10" hide-lg class="two_one">dfdfd dfdf</div>
+              <div flex="30px" show hide-md="{{ vm.hideBox }}" flex-md="25" class="two_two">dfd dfd dfd</div>
+              <div flex="20" flex-md="65" class="two_three"> dfd dfd</div>
+
+            </div>
+            <div flex class="three"> <h3> {{vm.magga}}</h3></div>
+
+        </div>
+    </div>
+
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-aria/angular-aria.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
+    <script src="node_modules/angular-material/angular-material.js"></script>
+    <script>
+
+        // Include app dependency on ngMaterial
+
+        angular.module( 'YourApp', [ 'ngMaterial' ] )
+            .controller("YourController", YourController );
+   function YourController(){
+       var vm = this;
+       vm.magga = "hello world ";
+   }
+
+    </script>
+
+</body>
+</html>
