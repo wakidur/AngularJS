@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <title>JavaScript apps with angularJS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="node_modules/angular/angular.js"></script> 
+    </head>
+    <body>
+        
+       
+        <hr>
+        
+        <!--step - 5 start-->
+        
+        <div ng-controller="objectControlle">
+            <h3> {{step}} </h3>
+            <input type="search" ng-model="search">
+            <ul>
+                <li ng-repeat="objlist in objs | filter: search">
+                    {{objlist.name}} : {{objlist.phone}}
+                </li> 
+            </ul>
+            <ul>
+                <li ng-repeat="person in people | filter: search">
+                    {{person.name}} : {{person.age}}
+                </li> 
+            </ul>
+        </div>
+        <!--step - 5 end-->
+        
+        
+        <script>
+            
+            angular.module("myApp",[]);
+           
+    
+        angular.module('myApp').controller('objectControlle',["$scope", function($scope){
+                $scope.people = [
+                    {
+                        name : "Tom", age : 20
+                    },
+                    {
+                        name : "Shohel", age : 26
+                    },
+                    {
+                        name : "Wakidur", age : 27
+                    },
+                    {
+                        name : "Arnob", age : 27
+                    }
+                ];
+                $scope.step = "Object controller";
+                $scope.objs = [
+                    {
+                    "name" : "Wakidur",
+                    "phone" : 01717309617
+                },
+                    {
+                    "name" : "Arnob",
+                    "phone" : 01673000000
+                },
+                    {
+                    "name" : "Shohel",
+                    "phone" : 01717000000
+                }
+            ];
+            console.log($scope.objs);
+                    
+        }])
+            
+        </script>
+        
+    </body>
+</html>

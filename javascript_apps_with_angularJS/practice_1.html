@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <title>JavaScript apps with angularJS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="node_modules/angular/angular.js"></script>
+        <script>
+            
+        </script>
+            
+    </head>
+    <body>
+        <!--step - 1-->
+        <div>
+            <label>Message:</label>
+            <input type="text" 
+                   ng-model="yourMessage" 
+                   placeholder="Enter a message here">
+            <label>Name:</label>
+            <input type="text" 
+                   ng-model="yourName" 
+                   placeholder="Enter a name here">
+            <hr>
+            <h1>{{yourMessage}} {{yourName}}!</h1>
+        </div>
+        
+        <hr>
+        
+        
+        <!--step - 1 end-->
+        
+        <!--step - 2 start--> 
+  
+        <div ng-controller="inputCtrl">
+            <input type="text" ng-model="name">
+            <h1>{{name}}</h1>
+            <h2>{{age}}</h2>
+        </div>
+        <div ng-controller="ashWorth">
+            <input type="text" ng-model="name">
+            <h1>{{name}}</h1>
+            <h2>{{age}}</h2>
+        </div>
+        
+        <!--step - 2 end-->
+        <hr>
+        <!--step - 3 start-->
+        <div ng-controller="checkBox">
+            <h3> {{step}} </h3>
+            <label>Name</label>
+            <input type="text" ng-model="youname"> 
+       
+            <input type="checkbox" ng-model="checked">
+            <label>Hide?</label>
+            
+<!--            <div ng-show="checked">
+                <p>Hello {{youname || "Defaule value of the input form"}}</p>
+            </div>-->
+            <div ng-show="checked">
+                <img ng-src="img/{{image || 'no-image'}}.jpg" alt="{{step}}">
+                <p>Hello {{ youname || "Defaule value of the input form" }}</p>
+            </div>
+        </div>
+        <hr>
+        <!--step - 3 End-->
+        <!--step - 4 Start-->
+        <div ng-controller="arrayControlle">
+            <h3> {{step}} </h3>
+            <input type="search" ng-model="search">
+            <ul>
+                <li ng-repeat="arraylist in arrays | filter: search">{{arraylist}}</li> 
+            </ul>
+        </div>
+        
+        <!--step - 4 End-->
+        <!--step - 5 start-->
+        
+        <div ng-controller="objectControlle">
+            <h3> {{step}} </h3>
+            <input type="search" ng-model="search">
+            <ul>
+                <li ng-repeat="objlist in objs | filter: search">{{objlist.name}} : {{objlist.phone}}</li> 
+            </ul>
+        </div>
+        <!--step - 5 end-->
+        
+        
+        <script>
+            
+            angular.module("myApp",[]);
+            /*step - 1*/
+            angular.module("myApp").controller('inputCtrl', ['$scope', function(s){
+                s.name = "hello";
+                s.age = 20;
+            }]);
+            /*step - 2*/
+            angular.module("myApp").controller('ashWorth', ['$scope', function(s){
+                s.name = "We are Bangladesy!";
+                s.age = 3260;
+                s.$watch('name', function(){
+                    console.log(s.name);
+                    if(s.name == "wakidur"){
+                        console.log("Thank your so much ")
+                    }else {
+                        console.log("this name is not wakidur");
+                    }
+                });
+               
+            }]);
+        
+        /*step - 3*/
+            angular.module("myApp").controller('checkBox', ['$scope', function($scope){
+                $scope.step = "Step 3"
+                $scope.image = ""
+            }]);
+        
+        /*step - 4*/
+        angular.module('myApp').controller('arrayControlle',['$scope',function($scope){
+                $scope.step = "Step - 5 : ObjectController";
+                $scope.arrays = ["Chrome", "File", "Edit", "View", "History"];
+        }]);
+    
+        angular.module('myApp').controller('objectControlle',["$scope", function($scope){
+                $scope.step = "Step - 5 : ObjectController";
+                $scope.objs = [
+                    {
+                    "name" : "Wakidur",
+                    "phone" : 01717309617
+                },
+                    {
+                    "name" : "Arnob",
+                    "phone" : 01673000000
+                },
+                    {
+                    "name" : "Shohel",
+                    "phone" : 01717000000
+                }
+            ];
+            console.log($scope.objs);
+                    
+        }])
+            
+        </script>
+        
+    </body>
+</html>
