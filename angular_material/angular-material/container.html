@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="YourApp">
+    <head>
+        <title>Container</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
+    </head>
+    <body>
+        <div class="container">
+            <div layout-xs="row" layout-sm="row" layout-md="row" layout-lg="row" layout-xl="row" layout-wrap>
+                <div  flex-xs="100" flex-sm="50" flex-md="25" flex-lg="25" flex-xl="25">
+                    <h1>Hello</h1>
+                </div>
+                <div  flex-xs="100" flex-sm="50" flex-md="25" flex-lg="25" flex-xl="25">
+                    <h1>Hello</h1>
+                </div>
+                <div  flex-xs="100" flex-sm="50" flex-md="25" flex-lg="25" flex-xl="25">
+                    <h1>Hello</h1>
+                </div>
+                <div  flex-xs="100" flex-sm="50" flex-md="25" flex-lg="25" flex-xl="25">
+                    <h1>Hello</h1>
+                </div>
+            </div>
+        </div>
+        
+        <script src="node_modules/jquery/dist/jquery.js"></script>
+        <script src="node_modules/angular/angular.js"></script>
+        <script src="node_modules/angular-aria/angular-aria.js"></script>
+        <script src="node_modules/angular-animate/angular-animate.js"></script>
+        <script src="node_modules/angular-material/angular-material.js"></script>
+    <script>
+
+        // Include app dependency on ngMaterial
+
+        angular.module( 'YourApp', [ 'ngMaterial' ] );
+            
+
+    </script>
+    </body>
+</html>

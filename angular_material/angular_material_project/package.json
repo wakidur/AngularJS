@@ -1,0 +1,31 @@
+{
+  "name": "angular-material-project",
+  "version": "0.0.1",
+  "description": "pracice parpase",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/wakidur/AngularJS.git"
+  },
+  "keywords": [
+    "AMP"
+  ],
+  "author": "Wakdur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wakidur/AngularJS/issues"
+  },
+  "homepage": "https://github.com/wakidur/AngularJS#readme",
+  "dependencies": {
+    "angular": "^1.5.10",
+    "angular-animate": "^1.5.10",
+    "angular-aria": "^1.5.10",
+    "angular-material": "^1.1.1",
+    "angular-messages": "^1.6.1",
+    "angular-route": "^1.6.1",
+    "jquery": "^3.1.1"
+  }
+}

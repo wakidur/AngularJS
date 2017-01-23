@@ -8,12 +8,10 @@
     <script src="app.js"></script>
 </head>
 <body>
-    <div ng-controller="myController">
-        <my-custome info="naomi"></my-custome>
-         <hr>
-        <my-custome info="igor"></my-custome>
+    <div ng-controller="myCurrent">
+        Date format: <input ng-model="format"> 
+        <hr/>
+        Current time is: <span my-current-time="format"></span>
     </div>
-     
-    
 </body>
 </html>

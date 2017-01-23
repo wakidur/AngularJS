@@ -1,0 +1,16 @@
+[
+    {
+    "number" : "01",
+    "step"  : "Step 1",
+    "info" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the"
+},
+{
+    "number" : "02",
+    "step"  : "Step 2",
+    "info" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the"
+},
+{
+    "number" : "03",
+    "step"  : "Step 3",
+    "info" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the"
+}]

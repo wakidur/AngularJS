@@ -1,0 +1,40 @@
+<section layout="row"  flex="">
+    <md-content flex="" class="moto-bg-color4_5">
+        <div layout-xs="row" layout-sm="row" layout-md="row" layout-lg="row" layout-xl="row" class="row-gutter-0" layout-wrap>
+            <div ng-repeat="item in myData"  flex-xs="100" flex-sm="50" flex-md="25" flex-lg="25" flex-xl="25">
+                <div class="moto-cell">
+                    <div class="moto-widget moto-widget-container moto-container_content_57e911f24">
+                        <a class="moto-anchor" name="benefits"></a>
+                        <div  class="moto-widget moto-widget-image moto-preset-default moto-align-center moto-spacing-top-large moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto ">
+                            <div class="moto-widget-image-link">
+                              <i class="material-icons icon-color-main">{{item.icons}}</i>
+                                
+                            </div>
+                        </div>
+                        <div class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto">
+                            <div class="moto-widget-text-content moto-widget-text-editable">
+                                <p class="moto-text_system_11" style="text-align: center;">{{item.servicename}} </p>
+                            </div>
+                        </div>
+                        <div  class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-auto moto-spacing-right-medium moto-spacing-bottom-auto moto-spacing-left-medium">
+                            <div class="moto-widget-text-content moto-widget-text-editable">
+                                <p class="moto-text_system_10" style="text-align: center;">
+                                    {{item.info}}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="moto-widget moto-widget-button moto-preset-4 moto-align-center moto-spacing-top-small moto-spacing-right-auto moto-spacing-bottom-large moto-spacing-left-auto ">
+                            <a ng-href="#/{{item.link}}" target="_blank" class="moto-widget-button-link moto-size-medium moto-link">
+                                <span class="moto-widget-button-label">{{item.learmore}}</span>
+                                <i class="material-icons">keyboard_arrow_right</i>
+                            </a>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </md-content>
+</section>
+
+
+

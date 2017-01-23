@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../node_modules/angular/angular.js"></script>
+    <script src="transclusion.js"></script>
+    
+</head>
+<body>
+    <div ng-controller="MainControllerThird">
+        <p>parents : {{title}} ||parents Sub :  {{subtitle}} </p>
+        <heading title="Title from directive  Attribute " subtitle="Subtitle from directive Attribute">
+            <p>Title From Transclusion</p>
+                
+        </heading>
+    </div>
+</body>
+</html>

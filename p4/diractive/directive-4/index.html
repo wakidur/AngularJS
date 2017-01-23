@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../node_modules/angular/angular.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div ng-controller="myTransclude">
+        <my-dialog> Check out the contents, {{name}} </my-dialog>
+        <hr>
+        <my-dialog-new> new contain {{message}}</my-dialog-new>
+    </div>
+    <hr>
+    
+    <div ng-controller="myTranscluders">
+        {{message}}
+        <my-dilog-second ng-hide="dialogIsHidden" on-close="hideDialog(message)">
+            Really have arbitrary contents, can you {{name}};
+        </my-dilog-second>
+    </div>
+</body>
+</html>

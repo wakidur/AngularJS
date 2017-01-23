@@ -1,0 +1,14 @@
+/* 
+    Created on : Jan 9, 2017, 1:44:28 PM
+    Author     : Wakidur
+*/
+md-toolbar.custom-md-toolbar{
+    background-color: #fff;
+}
+.icon-color-main{
+    color: #1e85e9;
+    font-size:70px;
+}
+.md-button a{
+    text-decoration: none;
+}

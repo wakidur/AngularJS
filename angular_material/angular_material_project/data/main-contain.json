@@ -1,0 +1,56 @@
+[{
+    "icons" : "event_seat",
+    "servicename" : "Benefit 1",
+    "info" : "Add short description of your benefits to show the best of your product, service or event.",
+    "link" : "benefit",
+    "learmore" :"Learn more"
+},
+{
+    "icons" : "change_history",
+    "servicename" : "Benefit 1",
+    "info" : "Add short description of your benefits to show the best of your product, service or event.",
+    "link" :"benefit",
+    "learmore" :"Learn more"
+},
+{
+    "icons" : "track_changes",
+    "servicename" : "Benefit 1",
+    "info" : "Add short description of your benefits to show the best of your product, service or event.",
+    "link" :"benefit",
+    "learmore" :"Learn more"
+},
+{
+    "icons" : "computer",
+    "servicename" : "Benefit 1",
+    "info" : "Add short description of your benefits to show the best of your product, service or event.",
+    "link" :"benefit",
+    "learmore" :"Learn more"
+},
+{
+    "icons" : "backup",
+    "servicename" : "Benefit 1",
+    "info" : "Add short description of your benefits to show the best of your product, service or event.",
+    "link" :"benefit",
+    "learmore" :"Learn more"
+},
+{
+    "icons" : "dashboard",
+    "servicename" : "Benefit 1",
+    "info" : "Add short description of your benefits to show the best of your product, service or event.",
+    "link" :"benefit",
+    "learmore" :"Learn more"
+},
+{
+    "icons" : "event",
+    "servicename" : "Benefit 1",
+    "info" : "Add short description of your benefits to show the best of your product, service or event.",
+    "link" :"benefit",
+    "learmore" :"Learn more"
+},
+{
+    "icons" : "language",
+    "servicename" : "Benefit 1",
+    "info" : "Add short description of your benefits to show the best of your product, service or event.",
+    "link" :"benefit",
+    "learmore" :"Learn more"
+}]
